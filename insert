@@ -26,7 +26,7 @@ void print(){
 
 
 void my_delete(int num_store){
-    struct node *p,*pre=NULL;
+    Store *p,*pre=NULL;
     char Name[128];
     scanf("%s",Name);
     for(int i=0;i<num_store;i++){
@@ -41,5 +41,4 @@ void my_delete(int num_store){
         if(p==NUL)
             printf("INVALID OPERATION\n");
     }
-
 }
