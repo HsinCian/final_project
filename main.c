@@ -2,10 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "insert.h" //functions:INSERT(), DELETE();
+#include "insert.h" //functions:INSERT(), DELETE(),PRINT();
 #include "search.h" //function:SEARCH(), IS_OPEN();
 #include "sort.h" //any SORT();
-//PRINT()你們自己決定放哪
 
 enum type{meal, drinks, dessert};
 
