@@ -20,7 +20,7 @@ void INSERT(int num_store){
 void print(){
     Store *p;
     for(p=HEAD;p!=NULL;p=p->next){
-        printf("%d %s\n",p->id,p->name);
+        printf("%s %s %lf %lf %f %d %d %lf %d\n",p->name,p->phonenumber,p->longitude,p->latitude,p->rating,p->time[0],p->time[1],p->distance,p->price);
     }
 }
 
@@ -38,7 +38,8 @@ void my_delete(int num_store){
             }
             pre=p;
         }
-        printf("INVALID OPERATION\n");
+        if(p==NUL)
+            printf("INVALID OPERATION\n");
     }
 
 }
