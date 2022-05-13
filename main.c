@@ -24,6 +24,7 @@ typedef struct store{
 }Store;
 
 int main(){
+  Store *HEAD = NULL;
   while(1){
     char cmd[10];
     
