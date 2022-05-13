@@ -14,10 +14,10 @@ typedef struct store{
   char name[128];
   char phonenumber[11];
   double longitude; //經度
-  double latitude; //緯度
-  float like; //評價
+  double latitude; //緯度 可能兩家店會有一樣的Ex:都在活中
+  float rating; //評價
   int time[2];
-  double distance;
+  double distance; //單位:公里 (與CCU csie的距離)
   int price;
   struct store *next;
   struct stor *prev; //看你們要單或雙向(freestyle)
@@ -26,13 +26,29 @@ typedef struct store{
 int main(){
   while(1){
     char cmd[10];
+    
     printf("What do you want to do? (INSERT/DELETE/SEARCH/IS_OPEN/SORT/STOP)\n");
     scanf("%s", cmd);
-    if(strcmp(cmd, "INSERT") == 0) INSERT(); //參數自己填:)
-    else if(strcmp(cmd, "DELETE") == 0) DELETE();
+    
+    int num_store;
+    if(strcmp(cmd, "INSERT") == 0){
+      scanf("%d", num_store);
+      INSERT(num_store, ); //參數自己填:)
+      PRINT();
+    }
+    else if(strcmp(cmd, "DELETE") == 0){
+      scanf("%d", num_store);
+      DELETE(num_store, );
+      PRINT();
+    }
     else if(strcmp(cmd, "SEARCH") == 0) SEARCH();
-    else if(strcmp(cmd, "IS_OPEN") == 0) IS_OPEN();
-    else if(strcmp(cmd, "SORT") == 0) SORT():
+    else if(strcmp(cmd, "IS_OPEN") == 0) IS_OPEN(); //可以用這個取得當下時間printf("Current time: %s",__TIME__); output: Current time: 19:54:39
+    else if(strcmp(cmd, "SORT") == 0){
+      char sort_by[10];
+      scanf("%s", sort_by);
+      SORT(sort_by, ): //sort by: name(照ASCII), longitude, latitude, rating, distance
+      PRINT();
+    }
     else if(strcmp(cmd, "STOP") == 0) return 0;
   }
   return 0;
