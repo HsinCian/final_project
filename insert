@@ -1,6 +1,6 @@
 #include "myDS.h"
 #include "insert.h"
-void my_insert(int num_store){
+void INSERT(int num_store){
     Store *p,*pre,*new_node;
     for(p=HEAD;p!=NULL;p=p->next)
         pre=p;
@@ -15,6 +15,8 @@ void my_insert(int num_store){
         p=p->next;
     }    
 }
+
+
 void print(){
     Store *p;
     for(p=HEAD;p!=NULL;p=p->next){
@@ -22,3 +24,21 @@ void print(){
     }
 }
 
+
+void my_delete(int num_store){
+    struct node *p,*pre=NULL;
+    char Name[128];
+    scanf("%s",Name);
+    for(int i=0;i<num_store;i++){
+        for(p=HEAD;p!=NULL;p=p->next){
+            if(strcmp(p->name,Name)==0){
+                pre->next=p->next;
+                free(p);
+                break;
+            }
+            pre=p;
+        }
+        printf("INVALID OPERATION\n");
+    }
+
+}
