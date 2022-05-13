@@ -2,7 +2,7 @@
 #include "basic.h"
 // HEAD is point to FOODPAPA (id: 0)
 void my_insert(int num_store,Store* HEAD, char *Name,char *Phonenumber,double Longitude,double Latitude,float Rating,int time1,int time2,double Distance,int Price){
-    struct node *p,*new_node;
+    Store *p,*new_node;
     for(p=HEAD;p!=NULL;p=p->next);
     for(int i=0;i<num_store;i++){
         new_node=(Store *)malloc(sizeof(Store));
