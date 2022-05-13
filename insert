@@ -1,5 +1,5 @@
 #include "myDS.h"
-#include "basic.h"
+#include "insert.h"
 // HEAD is point to FOODPAPA (id: 0)
 void my_insert(int num_store,Store* HEAD, char *Name,char *Phonenumber,double Longitude,double Latitude,float Rating,int time1,int time2,double Distance,int Price){
     Store *p,*new_node;
