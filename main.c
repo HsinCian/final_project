@@ -34,12 +34,12 @@ int main(){
     int num_store;
     if(strcmp(cmd, "INSERT") == 0){
       scanf("%d", num_store);
-      INSERT(num_store, ); //參數自己填:)
+      INSERT(num_store); //參數都丟在裡面ㄌ
       PRINT();
     }
     else if(strcmp(cmd, "DELETE") == 0){
       scanf("%d", num_store);
-      DELETE(num_store, );
+      DELETE(num_store);
       PRINT();
     }
     else if(strcmp(cmd, "SEARCH") == 0) SEARCH();
