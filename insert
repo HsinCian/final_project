@@ -1,8 +1,10 @@
 #include "myDS.h"
 #include "insert.h"
 void my_insert(int num_store,Store* HEAD, char *Name,char *Phonenumber,double Longitude,double Latitude,float Rating,int time1,int time2,double Distance,int Price){
-    Store *p,*new_node;
-    for(p=HEAD;p!=NULL;p=p->next);
+    Store *p,*pre,*new_node;
+    for(p=HEAD;p!=NULL;p=p->next)
+        pre=p;
+    p=pre;//這樣才是正確的最後位置
     for(int i=0;i<num_store;i++){
         new_node=(Store *)malloc(sizeof(Store));
         strcpy(new_node->name,Name);
