@@ -8,7 +8,7 @@ void my_print_id(){
   scanf("%s",Name);
 	for (p = HEAD; p != NULL; p = p->next){
 		if (strcmp(p->name,Name)==0){
-			PRINT();
+			//PRINT(); 這個好像要在外面
 			return;
 		}
 	}
