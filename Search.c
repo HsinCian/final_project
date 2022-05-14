@@ -2,7 +2,6 @@
 
 
 void my_print_id(){
-	// Print the id of the corresponding Name.
 	// If Name doesn’t exit, print “INVALID OPERATION”
 	Store *p;
   char Name[128];
