@@ -20,13 +20,14 @@ void IS_OPEN(){
 			if(p->time[0] <= (100*time1+time2) && (100*time1+time2) <= p->time[1]){
 			    printf("YES\n");
 			}
+			else
+			    printf("NO\n");
+			
 			return;
 		}
 	}
-	if (p == NULL){
-		printf("INVALID OPERATION\n");
-		return;
-  	}
+	printf("INVALID OPERATION\n");
+	
 }
 
 //printf("Current time: %s",__TIME__); //可以用這個取得當下時間,output: Current time: 19:54:39
