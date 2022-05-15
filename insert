@@ -38,7 +38,7 @@ void my_delete(int num_store){
             }
             pre=p;
         }
-        if(p==NUL)
+        if(p==NULL)
             printf("INVALID OPERATION\n");
     }
 }
