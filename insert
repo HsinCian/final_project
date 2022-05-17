@@ -1,5 +1,7 @@
 #include "myDS.h"
 #include "insert.h"
+//INSERT(), DELETE(),PRINT(),SEARCH(), IS_OPEN()
+
 void INSERT(int num_store,Store **HEAD){
     Store *p,*pre=(*HEAD),*new_node;
     for(p=(*HEAD);p!=NULL;p=p->next)
