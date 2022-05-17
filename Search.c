@@ -1,7 +1,7 @@
 #include "myDS.h"
 
 
-void SEARCH(){
+void SEARCH(Store *HEAD){
 	// If Name doesn’t exit, print “INVALID OPERATION”
 	Store *p;
   char Name[128];
