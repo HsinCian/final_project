@@ -32,7 +32,7 @@ int main(){
     
     int num_store;
     if(strcmp(cmd, "INSERT") == 0){
-      scanf("%d", num_store);
+      scanf("%d", &num_store);
       INSERT(num_store); //參數都丟在裡面ㄌ
       PRINT();
     }
