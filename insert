@@ -35,7 +35,7 @@ void PRINT(Store *HEAD){
 }
 
 
-void DELETE(int num_store){
+void DELETE(int num_store,Store *HEAD){
     Store *p,*pre=NULL;
     char Name[128];
     scanf("%s",Name);
