@@ -21,9 +21,9 @@ typedef struct store{
   struct store *next;
   struct stor *prev; //看你們要單或雙向(freestyle)
 }Store;
-Store *HEAD = NULL;
+
 int main(){
-  
+  Store *HEAD = NULL;
   while(1){
     char cmd[10];
     
