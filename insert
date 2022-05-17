@@ -17,7 +17,7 @@ void INSERT(int num_store){
 }
 
 
-void print(){
+void PRINT(){
     Store *p;
     for(p=HEAD;p!=NULL;p=p->next){
         printf("%s %s %lf %lf %f %d %d %lf %d\n",p->name,p->phonenumber,p->longitude,p->latitude,p->rating,p->time[0],p->time[1],p->distance,p->price);
@@ -25,7 +25,7 @@ void print(){
 }
 
 
-void my_delete(int num_store){
+void DELETE(int num_store){
     Store *p,*pre=NULL;
     char Name[128];
     scanf("%s",Name);
