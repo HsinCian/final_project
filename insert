@@ -1,27 +1,27 @@
 #include "myDS.h"
 #include "insert.h"
-void INSERT(int num_store,Store *HEAD){
-    Store *p,*pre=NULL,*new_node;
-    for(p=HEAD;p!=NULL;p=p->next)
+void INSERT(int num_store,Store **HEAD){
+    Store *p,*pre=(*HEAD),*new_node;
+    for(p=(*HEAD);p!=NULL;p=p->next)
         pre=p;
     p=pre;//這樣才是正確的最後位置
     for(int i=0;i<num_store;i++){
         if(p!=NULL){
             new_node=(Store *)malloc(sizeof(Store));
-            scanf("%s %s",&(new_node->name),&(new_node->phonenumber));
+            scanf("%s %s",(new_node->name),(new_node->phonenumber));
             scanf("%lf %lf",&(new_node->longitude),&(new_node->latitude));
-            scanf("%f %d %d %lf %d",&(new_node->rating),&(new_node->time[0]),&(new_node->time[1]),&(new_node->distance),&(new_node->price));
+            scanf("%f %d %d %lf %d",&(new_node->data),&(new_node->time[0]),&(new_node->time[1]),&(new_node->distance),&(new_node->price));
             new_node->next=p->next;
             p->next=new_node;
             p=p->next;
         }
         else{
-            HEAD=(Store *)malloc(sizeof(Store));
-            scanf("%s %s",&(HEAD->name),&(HEAD->phonenumber));
-            scanf("%lf %lf",&(HEAD->longitude),&(HEAD->latitude));
-            scanf("%f %d %d %lf %d",&(HEAD->rating),&(HEAD->time[0]),&(HEAD->time[1]),&(HEAD->distance),&(HEAD->price));
-            HEAD->next=NULL;
-            p=HEAD;
+            (*HEAD)=malloc(sizeof(Store));
+            scanf("%s %s",(*HEAD)->name,(*HEAD)->phonenumber);
+            scanf("%lf %lf",&((*HEAD)->longitude),&((*HEAD)->latitude));
+            scanf("%f %d %d %lf %d",&((*HEAD)->data),&((*HEAD)->time[0]),&((*HEAD)->time[1]),&((*HEAD)->distance),&((*HEAD)->price));
+            (*HEAD)->next=NULL;
+            p=(*HEAD);
         }
     }
 }
@@ -30,7 +30,7 @@ void INSERT(int num_store,Store *HEAD){
 void PRINT(Store *HEAD){
     Store *p;
     for(p=HEAD;p!=NULL;p=p->next){
-        printf("%s %s %lf %lf %f %d %d %lf %d\n",p->name,p->phonenumber,p->longitude,p->latitude,p->rating,p->time[0],p->time[1],p->distance,p->price);
+        printf("%s %s %lf %lf %f %d %d %lf %d\n",p->name,p->phonenumber,p->longitude,p->latitude,p->data,p->time[0],p->time[1],p->distance,p->price);
     }
 }
 
