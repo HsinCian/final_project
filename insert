@@ -1,6 +1,6 @@
 #include "myDS.h"
 #include "insert.h"
-void INSERT(int num_store){
+void INSERT(int num_store,Store *HEAD){
     Store *p,*pre=NULL,*new_node;
     for(p=HEAD;p!=NULL;p=p->next)
         pre=p;
@@ -27,7 +27,7 @@ void INSERT(int num_store){
 }
 
 
-void PRINT(){
+void PRINT(Store *HEAD){
     Store *p;
     for(p=HEAD;p!=NULL;p=p->next){
         printf("%s %s %lf %lf %f %d %d %lf %d\n",p->name,p->phonenumber,p->longitude,p->latitude,p->rating,p->time[0],p->time[1],p->distance,p->price);
