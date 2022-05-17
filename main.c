@@ -33,13 +33,13 @@ int main(){
     int num_store;
     if(strcmp(cmd, "INSERT") == 0){
       scanf("%d", &num_store);
-      INSERT(num_store); //參數都丟在裡面ㄌ
-      PRINT();
+      INSERT(num_store,&HEAD); //參數都丟在裡面ㄌ
+      PRINT(HEAD);
     }
     else if(strcmp(cmd, "DELETE") == 0){
       scanf("%d", num_store);
-      DELETE(num_store);
-      PRINT();
+      DELETE(num_store,&HEAD);
+      PRINT(HEAD);
     }
     else if(strcmp(cmd, "SEARCH") == 0) SEARCH();
     else if(strcmp(cmd, "IS_OPEN") == 0) IS_OPEN(); //可以用這個取得當下時間printf("Current time: %s",__TIME__); output: Current time: 19:54:39
@@ -47,7 +47,7 @@ int main(){
       char sort_by[10];
       scanf("%s", sort_by);
       SORT(sort_by, ): //sort by: name(照ASCII), longitude, latitude, rating, distance
-      PRINT();
+      PRINT(HEAD);
     }
     else if(strcmp(cmd, "STOP") == 0) return 0;
   }
