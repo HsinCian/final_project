@@ -35,15 +35,22 @@ void PRINT(Store *HEAD){
 }
 
 
-void DELETE(int num_store,Store *HEAD){
+void DELETE(int num_store,Store **HEAD){
     Store *p,*pre=NULL;
     char Name[128];
-    scanf("%s",Name);
+
     for(int i=0;i<num_store;i++){
-        for(p=HEAD;p!=NULL;p=p->next){
-            if(strcmp(p->name,Name)==0){
+        scanf("%s",Name);
+        for(p=(*HEAD);p!=NULL;p=p->next){
+            if(strcmp(p->name,Name)==0&&p!=(*HEAD)){
                 pre->next=p->next;
                 free(p);
+                break;
+            }
+            if(strcmp(p->name,Name)==0&&p==(*HEAD)){
+                p=(*HEAD)->next;
+                free((*HEAD));
+                (*HEAD)=p;
                 break;
             }
             pre=p;
