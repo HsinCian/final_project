@@ -1,6 +1,6 @@
 #include "myDS.h"
 
-void IS_OPEN(){
+void IS_OPEN(Store *HEAD){
 	// Print the opening time.
 	// If Name doesn’t exit, print “INVALID OPERATION”
 	Store *p;
