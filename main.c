@@ -6,20 +6,19 @@
 #include "search.h" //function:SEARCH(), IS_OPEN();
 #include "sort.h" //any SORT();
 
-enum type{meal, drinks, dessert};
+enum type{meal, drinks, dessert}; //將店家分成三大類
 
 typedef struct store{
-  int type; //enum裡面的種類
-  char name[128];
-  char phonenumber[11];
+  int type; //enum裡面的分類
+  char name[128]; //店家名稱
+  char phonenumber[11]; //電話
   double longitude; //經度
-  double latitude; //緯度 可能兩家店會有一樣的Ex:都在活中
+  double latitude; //緯度
   float rating; //評價
-  int time[2];
+  int time[2]; //營業時間
   double distance; //單位:公里 (與CCU csie的距離)
-  int price;
-  struct store *next;
-  struct stor *prev; //看你們要單或雙向(freestyle)
+  int price; //大概的價位
+  struct store *next; //Linkedlist
 }Store;
 
 int main(){
