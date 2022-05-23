@@ -22,7 +22,7 @@ int cmp_distance(const void* a,const void* b){
   else return 0;
 }
 
-void sort(Store **HEAD, char *sort_by, int count){
+void SORT(Store **HEAD, char *sort_by, int count){
 	Store *temp[count];
 	Store *head = *HEAD;
 	for (int i = 0; i < count; i++){
