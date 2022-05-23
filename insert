@@ -32,7 +32,8 @@ void INSERT(int num_store,Store **HEAD){
 void PRINT(Store *HEAD){
     Store *p;
     for(p=HEAD;p!=NULL;p=p->next){
-        printf("%s\t%s\t%f\t%f\t%f",p->name,p->phonenumber,p->longitude,p->latitude,p->rating);
+    	printf("NAME\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tDISTANCE\tPRICE\n");
+        printf("%-15s\t%s\t%f\t%f\t%.1f",p->name,p->phonenumber,p->longitude,p->latitude,p->rating);
 	if(p->time[0]==0)
 		printf("\t000%d\t%d\t%lf\t%d\n",p->time[0],p->time[1],p->distance,p->price);
 	else
