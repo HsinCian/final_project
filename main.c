@@ -29,7 +29,7 @@ int main(){
     
     printf("What do you want to do? (INSERT/DELETE/SEARCH/IS_OPEN/SORT/STOP)\n");
     scanf("%s", cmd);
-    printf("%s\n, cmd);
+    printf("%s\n", cmd);
     int num_store;
     if(strcmp(cmd, "INSERT") == 0){
       scanf("%d", &num_store);
@@ -49,7 +49,7 @@ int main(){
       char sort_by[10];
       scanf("%s", sort_by);
       printf("%s\n", sort_by);
-      SORT(&HEAD, sort_by, count): //sort by: name(照ASCII), longitude, latitude, rating, distance
+      SORT(&HEAD, sort_by, count); //sort by: name(照ASCII), longitude, latitude, rating, distance
       PRINT(HEAD);
     }
     else if(strcmp(cmd, "STOP") == 0) return 0;
