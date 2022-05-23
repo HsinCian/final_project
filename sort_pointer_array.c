@@ -27,6 +27,7 @@ void sort(Store **HEAD, char *sort_by, int count){
 	Store *head = *HEAD;
 	for (int i = 0; i < count; i++){
 		temp[i] = head;
+		if (head->next != NULL)
 		head = head->next;
 	}
 
