@@ -12,7 +12,7 @@ void INSERT(int num_store,Store **HEAD){
             new_node=(Store *)malloc(sizeof(Store));
             scanf("%s %s",(new_node->name),(new_node->phonenumber));
             scanf("%lf %lf",&(new_node->longitude),&(new_node->latitude));
-            scanf("%f %d %d %lf %d",&(new_node->data),&(new_node->time[0]),&(new_node->time[1]),&(new_node->distance),&(new_node->price));
+            scanf("%f %d %d %lf %d",&(new_node->rating),&(new_node->time[0]),&(new_node->time[1]),&(new_node->distance),&(new_node->price));
             new_node->next=p->next;
             p->next=new_node;
             p=p->next;
@@ -21,7 +21,7 @@ void INSERT(int num_store,Store **HEAD){
             (*HEAD)=malloc(sizeof(Store));
             scanf("%s %s",(*HEAD)->name,(*HEAD)->phonenumber);
             scanf("%lf %lf",&((*HEAD)->longitude),&((*HEAD)->latitude));
-            scanf("%f %d %d %lf %d",&((*HEAD)->data),&((*HEAD)->time[0]),&((*HEAD)->time[1]),&((*HEAD)->distance),&((*HEAD)->price));
+            scanf("%f %d %d %lf %d",&((*HEAD)->rating),&((*HEAD)->time[0]),&((*HEAD)->time[1]),&((*HEAD)->distance),&((*HEAD)->price));
             (*HEAD)->next=NULL;
             p=(*HEAD);
         }
@@ -32,7 +32,7 @@ void INSERT(int num_store,Store **HEAD){
 void PRINT(Store *HEAD){
     Store *p;
     for(p=HEAD;p!=NULL;p=p->next){
-        printf("%s\t%s\t%f\t%f\t%f",p->name,p->phonenumber,p->longitude,p->latitude,p->data);
+        printf("%s\t%s\t%f\t%f\t%f",p->name,p->phonenumber,p->longitude,p->latitude,p->rating);
 	if(p->time[0]==0)
 		printf("\t000%d\t%d\t%lf\t%d\n",p->time[0],p->time[1],p->distance,p->price);
 	else
@@ -103,7 +103,7 @@ void SEARCH(Store *HEAD){
   scanf("%s",Name);
   for (p = HEAD; p != NULL; p = p->next){
 	if (strcmp(p->name,Name)==0){
-		printf("%s %s %lf %lf %f %d %d %lf %d\n",p->name,p->phonenumber,p->longitude,p->latitude,p->data,p->time[0],p->time[1],p->distance,p->price);
+		printf("%s %s %lf %lf %f %d %d %lf %d\n",p->name,p->phonenumber,p->longitude,p->latitude,p->rating,p->time[0],p->time[1],p->distance,p->price);
 		return;
 	}
   }
