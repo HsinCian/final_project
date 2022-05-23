@@ -48,7 +48,7 @@ void sort(Store **HEAD, char *sort_by, int count){
   else if(strcmp(sort_by,"latitude")==0){
       qsort(temp,i,sizeof(temp[0]),cmp_latitude);
   }
-	else if(strcmp(sort_by,"rating")==0){
+  else if(strcmp(sort_by,"rating")==0){
       qsort(temp,i,sizeof(temp[0]),cmp_rating);
   }
   else if(strcmp(sort_by,"distance")==0){
