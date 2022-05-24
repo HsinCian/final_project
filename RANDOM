@@ -2,7 +2,6 @@
 #include <stdlib.h> /* 亂數相關函數 */
 #include <time.h> 
 
-
 void RANDOM(Store *HEAD){
 	int count=0;
 	srand( time(NULL) );
@@ -14,7 +13,6 @@ void RANDOM(Store *HEAD){
 		p = p->next;
 	printf("%s %s %lf %lf %f %d %d %lf %d\n",p->name,p->phonenumber,p->longitude,p->latitude,p->rating,p->time[0],p->time[1],p->distance,p->price);
 }
-
 
 void RANDOMTYPE (Store *HEAD,int TYPE){
 	int count=0,typenumber[100],i=0;
