@@ -16,7 +16,7 @@ void RANDOM(Store *HEAD){
 }
 
 
-void RANDOM(Store *HEAD,int TYPE){
+void RANDOMTYPE (Store *HEAD,int TYPE){
 	int count=0,typenumber[100],i=0;
 	srand( time(NULL) );
 	int x = rand();
