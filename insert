@@ -111,3 +111,15 @@ void SEARCH(Store *HEAD){
   printf("INVALID OPERATION\n");
     
 }
+
+void RANDOM(Store *HEAD){
+	int count=0;
+	srand( time(NULL) );
+	int x = rand();
+	for (p = HEAD; p != NULL; p = p->next) count++;
+	x=x%count;
+	p = HEAD;
+	for (int i=0; i<x; i++)
+		p = p->next;
+	printf("%s %s %lf %lf %f %d %d %lf %d\n",p->name,p->phonenumber,p->longitude,p->latitude,p->rating,p->time[0],p->time[1],p->distance,p->price);
+}
