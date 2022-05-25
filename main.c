@@ -11,6 +11,7 @@ enum type{meal, drinks, dessert}; //將店家分成三大類
 typedef struct store{
   int type; //enum裡面的分類
   char name[128]; //店家名稱
+  typedef enum {CHICHEN_RICE, JAPANESE, KOREAN, AMERICAN, CHINESE, BREAKFAST, DRINKS, DESSERT}type;
   char phonenumber[11]; //電話
   double longitude; //經度
   double latitude; //緯度
