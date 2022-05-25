@@ -100,11 +100,11 @@ void INSERT(int num_store,Store **HEAD){
 
 void PRINT(Store *HEAD){
     Store *p;
-    printf("NAME\t                  TYPE\tPHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tDISTANCE\tPRICE\n");
+    printf("NAME\t                        TYPE\t\tPHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tPRICE\n");
     for(p=HEAD;p!=NULL;p=p->next){
 	char type[13];
 	totype(type, p->type);    	
-        printf("%-30s\t%-12s\t\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
+        printf("%-30s\t%-12s\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
 	printf("\t%04d\t%04d\t%d\n",p->time[0],p->time[1],p->price);
     }
 }
