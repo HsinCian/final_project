@@ -5,7 +5,7 @@ enum TYPE gettype(const char *string);
 
 void totype(char *string, enum TYPE type);
 
-void INITIAL(Store **HEAD);
+int INITIAL(Store **HEAD, int count);
 
 void WRITE_BACK(Store *HEAD);
 
