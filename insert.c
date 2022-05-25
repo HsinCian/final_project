@@ -74,7 +74,7 @@ void INSERT(int num_store,Store **HEAD){
         }
         else{
             (*HEAD)=malloc(sizeof(Store));
-            scanf("%s %s %s",(*HEAD)->name,(*HEAD)->type),(*HEAD)->phonenumber);
+            scanf("%s %s %s",(*HEAD)->name,(*HEAD)->type,(*HEAD)->phonenumber);
             scanf("%lf %lf",&((*HEAD)->longitude),&((*HEAD)->latitude));
             scanf("%f %d %d %d",&((*HEAD)->rating),&((*HEAD)->time[0]),&((*HEAD)->time[1]),&((*HEAD)->price));
             (*HEAD)->next=NULL;
