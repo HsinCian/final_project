@@ -2,7 +2,7 @@
 #define EARTH_RADIUS            6378.137        //地球近似半徑
 
 void distance(Store *HEAD){
-    char location[10];
+    char location[20];
     double lat1,lng1;
     double lat2;
     double lng2;
