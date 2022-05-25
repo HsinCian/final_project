@@ -37,7 +37,7 @@ void INITIAL(Store **HEAD){
 			new_node=(Store *)malloc(sizeof(Store));
 			strcpy(new_node->name, tmp);
             		fscanf(file, "%s", type);
-	   		(*HEAD) -> type = gettype(type);
+	   		(new_node) -> type = gettype(type);
             		fscanf(file, "%s", (new_node->phonenumber));
             		fscanf(file, "%lf",&(new_node->longitude));
             		fscanf(file, "%lf",&(new_node->latitude)); 
