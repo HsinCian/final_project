@@ -105,10 +105,7 @@ void PRINT(Store *HEAD){
 	char type[13];
 	totype(type, p->type);    	
         printf("%-15s\t%s\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
-	if(p->time[0]==0)
-		printf("\t%04d\t%04d\t%d\n",p->time[0],p->time[1],p->price);
-	else
-		printf("\t%04d\t%04d\t%d\n",p->time[0],p->time[1],p->price);
+	printf("\t%04d\t%04d\t%d\n",p->time[0],p->time[1],p->price);
     }
 }
 
