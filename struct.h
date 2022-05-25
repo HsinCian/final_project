@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <time.h>
 typedef struct store{
   char name[128]; //店家名稱
   enum TYPE{CHICKEN_RICE, JAPANESE, KOREAN, AMERICAN, CHINESE, BREAKFAST, DRINKS, DESSERT}type;
