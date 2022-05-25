@@ -106,9 +106,9 @@ void PRINT(Store *HEAD){
     	printf("NAME\t        TYPE\tPHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tDISTANCE\tPRICE\n");
         printf("%-15s\t%s\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
 	if(p->time[0]==0)
-		printf("\t000%d\t%d\t%d\n",p->time[0],p->time[1],p->price);
+		printf("\t%04d\t%04d\t%d\n",p->time[0],p->time[1],p->price);
 	else
-		printf("\t%d\t%d\t%d\n",p->time[0],p->time[1],p->price);
+		printf("\t%04d\t%04d\t%d\n",p->time[0],p->time[1],p->price);
     }
 }
 
