@@ -7,15 +7,7 @@ void distance(Store *HEAD){
     double lat2;
     double lng2;
     // insert code here...
-    Store *p;
-    char Name[128];
-    scanf("%s",Name);
-    for (p = HEAD; p != NULL; p = p->next){
-	    if (strcmp(p->name,Name)==0){
-          lat2=p->latitude;
-          lng2=p->longitude;
-      }
-    }
+    
     printf("Where are you? (Science / Engineering / Center / Dormitory / Gate / Minxiong_Station / Chiayi_Station)\n");
     scanf("%s", location);
     if((strcmp(location, "Science"))== 0){
@@ -45,6 +37,15 @@ void distance(Store *HEAD){
     if((strcmp(location, "Chiayi_Station"))== 0){
         lat1 = 23.479372;
         lng1 = 120.441165;
+    }
+    Store *p;
+    char Name[128];
+    scanf("%s",Name);
+    for (p = HEAD; p != NULL; p = p->next){
+	    if (strcmp(p->name,Name)==0){
+          lat2=p->latitude;
+          lng2=p->longitude;
+      }
     }
     // 求弧度
     double radLat1 = lat1 * PI / 180.0;
