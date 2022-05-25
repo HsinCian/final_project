@@ -18,7 +18,7 @@ void RANDOM(Store *HEAD){
     	printf("\t%04d\t%04d\t%d\n",p->time[0],p->time[1],p->price);
 }
 
-void RANDOMTYPE (Store *HEAD,int TYPE){
+void RANDOM_TYPE (Store *HEAD,int TYPE){
     Store *p;
     int count=0,typenumber[100],i=0;
     srand( time(NULL) );
