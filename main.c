@@ -8,7 +8,7 @@ int main(){
   INITIAL(&HEAD);
   while(1){
     char cmd[10];
-    printf("What do you want to do? (INSERT/DELETE/SEARCH/IS_OPEN/SORT/STOP)\n");
+    printf("What do you want to do? (INSERT/DELETE/SEARCH/IS_OPEN/SORT/PRINT/STOP)\n");
     scanf("%s", cmd);
     printf("%s\n", cmd);
     int num_store;
@@ -33,6 +33,7 @@ int main(){
       SORT(&HEAD, sort_by, count); //sort by: name(照ASCII), longitude, latitude, rating
       PRINT(HEAD);
     }
+    else if(strcmp(cmd, "PRINT") == 0) return 0;
     else if(strcmp(cmd, "STOP") == 0) return 0;
     printf("\n");
   }
