@@ -104,7 +104,7 @@ void PRINT(Store *HEAD){
     for(p=HEAD;p!=NULL;p=p->next){
 	char type[13];
 	totype(type, p->type);    	
-        printf("%-15s\t%-12s\t\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
+        printf("%-30s\t%-12s\t\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
 	printf("\t%04d\t%04d\t%d\n",p->time[0],p->time[1],p->price);
     }
 }
@@ -187,7 +187,8 @@ void SEARCH(Store *HEAD){
 	if (strcmp(p->name,Name)==0){
 		char type[13];
 		totype(type, p->type);
-		printf("%s %s %s %lf %lf %f %04d %04d %d\n",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating,p->time[0],p->time[1],p->price);
+		printf("%-30s\t%-12s\t\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
+		printf("\t%04d\t%04d\t%d\n",p->time[0],p->time[1],p->price);
 		return;
 	}
   }
