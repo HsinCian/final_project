@@ -1,4 +1,5 @@
-#include "myDS.h"
+#ifndef INSERT_H
+#define INSERT_H
 #include "insert.h"
 //INSERT(), DELETE(),PRINT(),SEARCH(), IS_OPEN()
 
@@ -10,18 +11,18 @@ void INSERT(int num_store,Store **HEAD){
     for(int i=0;i<num_store;i++){
         if(p!=NULL){
             new_node=(Store *)malloc(sizeof(Store));
-            scanf("%s %s",(new_node->name),(new_node->phonenumber));
+            scanf("%s %d %s",(new_node->name),&(new_node->type),(new_node->phonenumber));
             scanf("%lf %lf",&(new_node->longitude),&(new_node->latitude));
-            scanf("%f %d %d %lf %d",&(new_node->rating),&(new_node->time[0]),&(new_node->time[1]),&(new_node->distance),&(new_node->price));
+            scanf("%f %d %d %d",&(new_node->rating),&(new_node->time[0]),&(new_node->time[1]),&(new_node->price));
             new_node->next=p->next;
             p->next=new_node;
             p=p->next;
         }
         else{
             (*HEAD)=malloc(sizeof(Store));
-            scanf("%s %s",(*HEAD)->name,(*HEAD)->phonenumber);
+            scanf("%s %d %s",(*HEAD)->name,&((*HEAD)->type),(*HEAD)->phonenumber);
             scanf("%lf %lf",&((*HEAD)->longitude),&((*HEAD)->latitude));
-            scanf("%f %d %d %lf %d",&((*HEAD)->rating),&((*HEAD)->time[0]),&((*HEAD)->time[1]),&((*HEAD)->distance),&((*HEAD)->price));
+            scanf("%f %d %d %d",&((*HEAD)->rating),&((*HEAD)->time[0]),&((*HEAD)->time[1]),&((*HEAD)->price));
             (*HEAD)->next=NULL;
             p=(*HEAD);
         }
@@ -124,4 +125,6 @@ void SEARCH(Store *HEAD){
   printf("INVALID OPERATION\n");
     
 }
+
+#endif
 
