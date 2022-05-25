@@ -49,11 +49,11 @@ int main(){
             RANDOM_TYPE(HEAD,gettype(type));
     }
     else if(strcmp(cmd, "STOP") == 0){
-      WRITE_BACK(HEAD);
-      return 0;
+            WRITE_BACK(HEAD);
+            return 0;
     }
     else{
-    printf("INVALID OPERATION, please input again");
+            printf("INVALID OPERATION, please input again");
     }
     printf("\n");
   }
