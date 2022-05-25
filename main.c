@@ -9,7 +9,7 @@ int main(){
   INITIAL(&HEAD);
   while(1){
     char cmd[1];
-    printf("What do you want to do? (INSERT/DELETE/SEARCH/IS_OPEN/SORT/STOP)\n");
+    printf("What do you want to do? (INSERT / DELETE / SEARCH / IS_OPEN / SORT / STOP)\n");
     scanf("%s", cmd);
     printf("%s\n", cmd);
     int num_store;
@@ -36,14 +36,14 @@ int main(){
     }
     else if(strcmp(cmd, "PRINT") == 0) PRINT(HEAD);
     else if(strcmp(cmd, "PRINTTYPE") == 0) {
-            printf("What type do you want? (CHICKEN_RICE/JAPANESE/KOREAN/AMERICAN/CHINESE/BREAKFAST/DRINKS/DESSERT)\n");
+            printf("What type do you want? (CHICKEN_RICE / JAPANESE / KOREAN / AMERICAN / CHINESE / BREAKFAST / DRINKS / DESSERT)\n");
             char type[36];
             scanf("%s",type);
             PRINT_TYPE(HEAD,gettype(type));
     }
     else if(strcmp(cmd, "RANDOM") == 0) RANDOM(HEAD);
     else if(strcmp(cmd, "RANDOMTYPE") == 0) {
-            printf("What type do you want? (CHICKEN_RICE/JAPANESE/KOREAN/AMERICAN/CHINESE/BREAKFAST/DRINKS/DESSERT)\n");
+            printf("What type do you want? (CHICKEN_RICE / JAPANESE / KOREAN / AMERICAN / CHINESE / BREAKFAST / DRINKS / DESSERT)\n");
             char type[36];
             scanf("%s",type);
             RANDOM_TYPE(HEAD,gettype(type));
