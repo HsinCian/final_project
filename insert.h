@@ -3,6 +3,8 @@
 
 enum TYPE gettype(const char *string);
 
+void totype(char *string, enum TYPE type);
+
 void INITIAL(Store **HEAD);
 
 void INSERT(int num_store,Store **HEAD);
