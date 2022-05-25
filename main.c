@@ -36,8 +36,8 @@ int main(){
     }
     else if(strcmp(cmd, "PRINT") == 0) PRINT(HEAD);
     else if(strcmp(cmd, "STOP") == 0){
-    WRITE_BACK(HEAD);
-    return 0;
+      WRITE_BACK(HEAD);
+      return 0;
     }
     printf("\n");
   }
