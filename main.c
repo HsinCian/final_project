@@ -53,7 +53,7 @@ int main(){
       return 0;
     }
     else{
-    printf("INVALID OPERATION");
+    printf("INVALID OPERATION, please input again");
     }
     printf("\n");
   }
