@@ -9,7 +9,7 @@ int main(){
   INITIAL(&HEAD);
   while(1){
     char cmd[1];
-    printf("What do you want to do? (INSERT / DELETE / SEARCH / IS_OPEN / SORT / STOP)\n");
+    printf("What do you want to do? (INSERT / DELETE / SEARCH / IS_OPEN / SORT / STOP / PRINTTYPE / RANDOM / RANDOMTYPE)\n");
     scanf("%s", cmd);
     printf("%s\n", cmd);
     int num_store;
@@ -51,6 +51,9 @@ int main(){
     else if(strcmp(cmd, "STOP") == 0){
       WRITE_BACK(HEAD);
       return 0;
+    }
+    else{
+    printf("INVALID OPERATION");
     }
     printf("\n");
   }
