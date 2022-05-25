@@ -23,7 +23,7 @@ void totype(char *string, enum TYPE type){
 	if(type == 7) strcpy(string, "DESSERT");
 }
 
-void INITIAL(Store **HEAD){
+int INITIAL(Store **HEAD, int count){
 	FILE *file;
 	file = fopen("data.txt", "r");
 	Store *p,*pre=(*HEAD),*new_node;
@@ -65,8 +65,10 @@ void INITIAL(Store **HEAD){
             		(*HEAD)->next=NULL;
             		p=(*HEAD);
         	}
+		count++;
     	}
     	fclose(file);
+	return count;
 }
 
 void WRITE_BACK(Store *HEAD){
