@@ -5,7 +5,7 @@ void INSERT(int num_store,Store **HEAD);
 
 void PRINT(Store *HEAD);
 
-//void PRINT_TYPE(Store *HEAD,int TYPE);
+void PRINT_TYPE(Store *HEAD,int TYPE);
 
 void DELETE(int num_store,Store **HEAD);
 
