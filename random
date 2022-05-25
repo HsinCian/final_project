@@ -3,6 +3,7 @@
 #include <time.h> 
 
 void RANDOM(Store *HEAD){
+	Store *p;
 	int count=0;
 	srand( time(NULL) );
 	int x = rand();
@@ -15,6 +16,7 @@ void RANDOM(Store *HEAD){
 }
 
 void RANDOMTYPE (Store *HEAD,int TYPE){
+	Store *p;
 	int count=0,typenumber[100],i=0;
 	srand( time(NULL) );
 	int x = rand();
