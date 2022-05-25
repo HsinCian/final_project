@@ -13,6 +13,17 @@ enum TYPE gettype(const char *string){
 	if(strcmp(string, "DESSERT") == 0) return DESSERT;
 }
 
+void totype(char *string, enum TYPE type){
+	if(type == 0) strcpy(string, "CHICKEN_RICE");
+	if(type == 1) strcpy(string, "JAPANESE");
+	if(type == 2) strcpy(string, "KOREAN");
+	if(type == 3) strcpy(string, "AMERICAN");
+	if(type == 4) strcpy(string, "CHINESE");
+	if(type == 5) strcpy(string, "BREAKFAST");
+	if(type == 6) strcpy(string, "DRINKS");
+	if(type == 7) strcpy(string, "DESSERT");
+}
+
 void INITIAL(Store **HEAD){
 	FILE *file;
 	file = fopen("data.txt", "r");
@@ -62,10 +73,12 @@ void INSERT(int num_store,Store **HEAD){
     for(p=(*HEAD);p!=NULL;p=p->next)
         pre=p;
     p=pre;//這樣才是正確的最後位置
+    char type[13];
     for(int i=0;i<num_store;i++){
         if(p!=NULL){
             new_node=(Store *)malloc(sizeof(Store));
-            scanf("%s %s %s",(new_node->name),(new_node->type),(new_node->phonenumber));
+            scanf("%s %s %s",(new_node->name),type,(new_node->phonenumber));
+	    new_node->type = gettype(type);
             scanf("%lf %lf",&(new_node->longitude),&(new_node->latitude));
             scanf("%f %d %d %d",&(new_node->rating),&(new_node->time[0]),&(new_node->time[1]),&(new_node->price));
             new_node->next=p->next;
@@ -74,7 +87,8 @@ void INSERT(int num_store,Store **HEAD){
         }
         else{
             (*HEAD)=malloc(sizeof(Store));
-            scanf("%s %s %s",(*HEAD)->name,(*HEAD)->type,(*HEAD)->phonenumber);
+            scanf("%s %s %s",(*HEAD)->name,type,(*HEAD)->phonenumber);
+	    (*HEAD)->type = gettype(type);
             scanf("%lf %lf",&((*HEAD)->longitude),&((*HEAD)->latitude));
             scanf("%f %d %d %d",&((*HEAD)->rating),&((*HEAD)->time[0]),&((*HEAD)->time[1]),&((*HEAD)->price));
             (*HEAD)->next=NULL;
@@ -87,8 +101,10 @@ void INSERT(int num_store,Store **HEAD){
 void PRINT(Store *HEAD){
     Store *p;
     for(p=HEAD;p!=NULL;p=p->next){
+	char type[13];
+	totype(type, p->type);
     	printf("NAME\t        TYPE\tPHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tDISTANCE\tPRICE\n");
-        printf("%-15s\t%s\t%s\t%f\t%f\t%.1f",p->name,p->type,p->phonenumber,p->longitude,p->latitude,p->rating);
+        printf("%-15s\t%s\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
 	if(p->time[0]==0)
 		printf("\t000%d\t%d\t%d\n",p->time[0],p->time[1],p->price);
 	else
@@ -172,7 +188,9 @@ void SEARCH(Store *HEAD){
   scanf("%s",Name);
   for (p = HEAD; p != NULL; p = p->next){
 	if (strcmp(p->name,Name)==0){
-		printf("%s %d %s %lf %lf %f %04d %04d %d\n",p->name,p->type,p->phonenumber,p->longitude,p->latitude,p->rating,p->time[0],p->time[1],p->price);
+		char type[13];
+		totype(type, p->type);
+		printf("%s %d %s %lf %lf %f %04d %04d %d\n",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating,p->time[0],p->time[1],p->price);
 		return;
 	}
   }
