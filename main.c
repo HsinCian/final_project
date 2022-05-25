@@ -6,10 +6,7 @@
 #include "search.h" //function:SEARCH(), IS_OPEN();
 #include "sort.h" //any SORT();
 
-enum type{meal, drinks, dessert}; //將店家分成三大類
-
 typedef struct store{
-  int type; //enum裡面的分類
   char name[128]; //店家名稱
   typedef enum {CHICHEN_RICE, JAPANESE, KOREAN, AMERICAN, CHINESE, BREAKFAST, DRINKS, DESSERT}type;
   char phonenumber[11]; //電話
@@ -50,7 +47,7 @@ int main(){
       char sort_by[10];
       scanf("%s", sort_by);
       printf("%s\n", sort_by);
-      SORT(&HEAD, sort_by, count); //sort by: name(照ASCII), longitude, latitude, rating, distance
+      SORT(&HEAD, sort_by, count); //sort by: name(照ASCII), longitude, latitude, rating
       PRINT(HEAD);
     }
     else if(strcmp(cmd, "STOP") == 0) return 0;
