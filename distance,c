@@ -16,7 +16,7 @@ void distance(Store *HEAD){
           lng2=p->longitude;
       }
     }
-    printf("Where are you? (Science/Engineering/Center/Dormitory/Gate/Minxiong_Station/Chiayi_Station)\n");
+    printf("Where are you? (Science / Engineering / Center / Dormitory / Gate / Minxiong_Station / Chiayi_Station)\n");
     scanf("%s", location);
     if((strcmp(location, "Science"))== 0){
         lat1 = 23.564713;
