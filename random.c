@@ -40,12 +40,14 @@ void RANDOM_TYPE (Store *HEAD,int TYPE){
     printf("\t%04d\t%04d\t%d\n",p->time[0],p->time[1],p->price);
 }
 
-void PRINT_NEAR(Store *HEAD){
+void RANDOM_NEAR(Store *HEAD){
     char location[20];
     double lat1,lng1;
     double lat2;
     double lng2;
-    printf("Where are you? (Science/Engineering/Center/Dormitory/Gate/Minxiong_Station/Chiayi_Station)\n");
+    // insert code here...
+
+    printf("Where are you? (Science / Engineering / Center / Dormitory / Gate / Minxiong_Station / Chiayi_Station)\n");
     scanf("%s", location);
     if((strcmp(location, "Science"))== 0){
         lat1 = 23.564713;
@@ -76,14 +78,26 @@ void PRINT_NEAR(Store *HEAD){
         lng1 = 120.441165;
     }
     Store *p;
+    srand( time(NULL) );
+	int x = rand();
+    int count=0,typenumber[100],i=0;
     for (p = HEAD; p != NULL; p = p->next){
           lat2=p->latitude;
           lng2=p->longitude;
           if(get_distance(lat1,lng1,lat2,lng2)<1){
-            char type[13];
-            totype(type, p->type);
-            printf("%-30s\t%-12s\t\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
-            printf("\t%04d\t%04d\t%d\n",p->time[0],p->time[1],p->price);
+            typenumber[i]=count;
+			i++;
           }
+          count++;
     }
+    x=x%i;
+	p = HEAD;
+	for(int i=0; i<typenumber[x]; i++)
+		p = p->next;
+	char type[13];
+    totype(type, p->type);
+    printf("%-30s\t%-12s\t\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
+    printf("\t%04d\t%04d\t%d\n",p->time[0],p->time[1],p->price);
+
+
 }
