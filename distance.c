@@ -62,5 +62,5 @@ void distance(Store *HEAD){
           lng2=p->longitude;
       }
     }
-    printf("dst = %0.3fkm\n", get_distance(lat1,lng1,lat2,lng2););
+    printf("dst = %0.3fkm\n", get_distance(lat1,lng1,lat2,lng2));
 }
