@@ -1,7 +1,7 @@
 #define PI                      3.1415926
 #define EARTH_RADIUS            6378.137        //地球近似半徑
 
-void get_distance(double lat1, double lng1, double lat2, double lng2){
+double get_distance(double lat1, double lng1, double lat2, double lng2){
     // 求弧度
     double radLat1 = lat1 * PI / 180.0;
     double radLat2 = lat2 * PI / 180.0;
@@ -12,7 +12,8 @@ void get_distance(double lat1, double lng1, double lat2, double lng2){
     
     dst = dst * EARTH_RADIUS;
     dst= round(dst * 10000) / 10000;
-    printf("dst = %0.3fkm\n", dst);
+    return dst;
+    
 }
 
 void distance(Store *HEAD){
@@ -61,5 +62,5 @@ void distance(Store *HEAD){
           lng2=p->longitude;
       }
     }
-    get_distance(lat1,lng1,lat2,lng2);
+    printf("dst = %0.3fkm\n", get_distance(lat1,lng1,lat2,lng2););
 }
