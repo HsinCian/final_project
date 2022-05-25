@@ -44,19 +44,18 @@ void PRINT(Store *HEAD){
     }
 }
 
-/*void PRINT_TYPE(Store *HEAD,int TYPE){
+void PRINT_TYPE(Store *HEAD,int TYPE){
     Store *p;
     printf("NAME\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tDISTANCE\tPRICE\n");
     for(p=HEAD;p!=NULL;p=p->next){
     	if(p->type == TYPE){		
-		printf("%-15s\t%s\t%f\t%f\t%.1f",p->name,p->phonenumber,p->longitude,p->latitude,p->rating);
-		if(p->time[0]==0)
-			printf("\t000%d\t%d\t%lf\t%d\n",p->time[0],p->time[1],p->distance,p->price);
-		else
-			printf("\t%d\t%d\t%lf\t%d\n",p->time[0],p->time[1],p->distance,p->price);
+		char type[13];
+		totype(type, p->type);    	
+		printf("%-30s\t%-12s\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
+		printf("\t%04d\t%04d\t%d\n",p->time[0],p->time[1],p->price);
 	}
     }
-}*/
+}
 
 void DELETE(int num_store,Store **HEAD){
     Store *p,*pre=NULL;
