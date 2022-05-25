@@ -1,30 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#include "insert.h" //functions:INSERT(), DELETE(),PRINT();
-#include "search.h" //function:SEARCH(), IS_OPEN();
+#include "struct.h"
+#include "insert.h" //functions:INSERT(), DELETE(),PRINT(),SEARCH(), IS_OPEN();
 #include "sort.h" //any SORT();
-
-typedef struct store{
-  char name[128]; //店家名稱
-  typedef enum {CHICHEN_RICE, JAPANESE, KOREAN, AMERICAN, CHINESE, BREAKFAST, DRINKS, DESSERT}type;
-  char phonenumber[11]; //電話
-  double longitude; //經度
-  double latitude; //緯度
-  float rating; //評價
-  int time[2]; //營業時間
-  double distance; //單位:公里 (與CCU csie的距離)
-  int price; //大概的價位
-  struct store *next; //Linkedlist
-}Store;
 
 int main(){
   Store *HEAD = NULL;
   int count = 0;
+  INITIAL(&HEAD);
   while(1){
     char cmd[10];
-    
     printf("What do you want to do? (INSERT/DELETE/SEARCH/IS_OPEN/SORT/STOP)\n");
     scanf("%s", cmd);
     printf("%s\n", cmd);
