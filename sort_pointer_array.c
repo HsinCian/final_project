@@ -1,3 +1,6 @@
+#include "struct.h"
+#include "sort_pointer_array.h"
+
 int cmp_longitude(const void* a,const void* b){
   if( (*(Store**)a)->longitude - (*(Store**)b)->longitude >0) return 1;
   else if ( (*(Store**)a)->longitude - (*(Store**)b)->longitude < 0) return -1;
@@ -16,11 +19,11 @@ int cmp_rating(const void* a,const void* b){
   else return 0;
 }
 
-int cmp_distance(const void* a,const void* b){
+/*int cmp_distance(const void* a,const void* b){
   if( (*(Store**)a)->distance - (*(Store**)b)->distance >0) return 1;
   else if ( (*(Store**)a)->distance - (*(Store**)b)->distance < 0) return -1;
   else return 0;
-}
+}*/
 
 void SORT(Store **HEAD, char *sort_by, int count){
 	Store *temp[count];
@@ -43,9 +46,9 @@ void SORT(Store **HEAD, char *sort_by, int count){
 	else if(strcmp(sort_by,"rating")==0){
       qsort(temp,i,sizeof(Store*),cmp_rating);
     }
-    else if(strcmp(sort_by,"distance")==0){
+    /*else if(strcmp(sort_by,"distance")==0){
       qsort(temp,i,sizeof(temp[0]),cmp_distance);
-    }
+    }*/
 	
 
 	Store *current;
