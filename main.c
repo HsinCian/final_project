@@ -7,7 +7,7 @@ int main(){
   int count = 0;
   INITIAL(&HEAD);
   while(1){
-    char cmd[10];
+    char cmd[15];
     printf("What do you want to do? (INSERT/DELETE/SEARCH/IS_OPEN/SORT/PRINT/STOP)\n");
     scanf("%s", cmd);
     printf("%s\n", cmd);
