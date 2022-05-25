@@ -190,7 +190,7 @@ void SEARCH(Store *HEAD){
 	if (strcmp(p->name,Name)==0){
 		char type[13];
 		totype(type, p->type);
-		printf("%s %d %s %lf %lf %f %04d %04d %d\n",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating,p->time[0],p->time[1],p->price);
+		printf("%s %s %s %lf %lf %f %04d %04d %d\n",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating,p->time[0],p->time[1],p->price);
 		return;
 	}
   }
