@@ -1,6 +1,6 @@
 #include "struct.h"
 #include "insert.h" //functions:INSERT(), DELETE(),PRINT(),SEARCH(), IS_OPEN();
-#include "sort.h" //any SORT();
+#include "sort_pointer_array.h" //any SORT();
 
 int main(){
   Store *HEAD = NULL;
