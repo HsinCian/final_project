@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h> /* 亂數相關函數 */
-#include <time.h> 
+#include "struct.h"
+#include "myIO.h"
+#include "random.h"
 
 void RANDOM(Store *HEAD){
 	Store *p;
