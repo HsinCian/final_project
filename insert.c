@@ -65,7 +65,7 @@ void INSERT(int num_store,Store **HEAD){
     for(int i=0;i<num_store;i++){
         if(p!=NULL){
             new_node=(Store *)malloc(sizeof(Store));
-            scanf("%s %d %s",(new_node->name),&(new_node->type),(new_node->phonenumber));
+            scanf("%s %s %s",(new_node->name),(new_node->type),(new_node->phonenumber));
             scanf("%lf %lf",&(new_node->longitude),&(new_node->latitude));
             scanf("%f %d %d %d",&(new_node->rating),&(new_node->time[0]),&(new_node->time[1]),&(new_node->price));
             new_node->next=p->next;
@@ -74,7 +74,7 @@ void INSERT(int num_store,Store **HEAD){
         }
         else{
             (*HEAD)=malloc(sizeof(Store));
-            scanf("%s %d %s",(*HEAD)->name,&((*HEAD)->type),(*HEAD)->phonenumber);
+            scanf("%s %s %s",(*HEAD)->name,(*HEAD)->type),(*HEAD)->phonenumber);
             scanf("%lf %lf",&((*HEAD)->longitude),&((*HEAD)->latitude));
             scanf("%f %d %d %d",&((*HEAD)->rating),&((*HEAD)->time[0]),&((*HEAD)->time[1]),&((*HEAD)->price));
             (*HEAD)->next=NULL;
@@ -87,16 +87,16 @@ void INSERT(int num_store,Store **HEAD){
 void PRINT(Store *HEAD){
     Store *p;
     for(p=HEAD;p!=NULL;p=p->next){
-    	printf("NAME\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tDISTANCE\tPRICE\n");
-        printf("%-15s\t%s\t%f\t%f\t%.1f",p->name,p->phonenumber,p->longitude,p->latitude,p->rating);
+    	printf("NAME\t        TYPE\tPHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tDISTANCE\tPRICE\n");
+        printf("%-15s\t%s\t%s\t%f\t%f\t%.1f",p->name,p->type,p->phonenumber,p->longitude,p->latitude,p->rating);
 	if(p->time[0]==0)
-		printf("\t000%d\t%d\t%lf\t%d\n",p->time[0],p->time[1],p->distance,p->price);
+		printf("\t000%d\t%d\t%d\n",p->time[0],p->time[1],p->price);
 	else
-		printf("\t%d\t%d\t%lf\t%d\n",p->time[0],p->time[1],p->distance,p->price);
+		printf("\t%d\t%d\t%d\n",p->time[0],p->time[1],p->price);
     }
 }
 
-void PRINT_TYPE(Store *HEAD,int TYPE){
+/*void PRINT_TYPE(Store *HEAD,int TYPE){
     Store *p;
     for(p=HEAD;p!=NULL;p=p->next){
     	if(p->type == TYPE){
@@ -108,7 +108,7 @@ void PRINT_TYPE(Store *HEAD,int TYPE){
 			printf("\t%d\t%d\t%lf\t%d\n",p->time[0],p->time[1],p->distance,p->price);
 	}
     }
-}
+}*/
 
 void DELETE(int num_store,Store **HEAD){
     Store *p,*pre=NULL;
@@ -172,13 +172,10 @@ void SEARCH(Store *HEAD){
   scanf("%s",Name);
   for (p = HEAD; p != NULL; p = p->next){
 	if (strcmp(p->name,Name)==0){
-		printf("%s %s %lf %lf %f %d %d %lf %d\n",p->name,p->phonenumber,p->longitude,p->latitude,p->rating,p->time[0],p->time[1],p->distance,p->price);
+		printf("%s %d %s %lf %lf %f %04d %04d %d\n",p->name,p->type,p->phonenumber,p->longitude,p->latitude,p->rating,p->time[0],p->time[1],p->price);
 		return;
 	}
   }
   printf("INVALID OPERATION\n");
     
 }
-
-#endif
-
