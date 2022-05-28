@@ -35,8 +35,12 @@ int main(){
       scanf("%s", sort_by);
       printf("%s\n", sort_by);
       SORT(&HEAD, sort_by, count); //sort by: name(照ASCII), longitude, latitude, rating
-      PRINT(HEAD);
-      WRITE_EXCEL(HEAD);//Firstly writting data into output.csv. Secondly open the file by appropriate program such as Excel or Liberoffice.
+      printf("Do you want to export to Excel?(Y/N)\n");
+      char t[5];
+      scanf("%s",t);
+      if(strcmp("N",t)==0||strcmp("n",t)==0)PRINT(HEAD);
+      else if(strcmp("Y",t)==0||strcmp("y",t)==0)WRITE_EXCEL(HEAD);
+      else printf("Please try again!\n");//Firstly writting data into output.csv. Secondly open the file by appropriate program such as Excel or Liberoffice.
     }
     else if(strcmp(cmd, "PRINT") == 0) PRINT(HEAD);
     else if(strcmp(cmd, "PRINTTYPE") == 0) PRINT_TYPE(HEAD);
