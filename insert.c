@@ -44,8 +44,12 @@ void PRINT(Store *HEAD){
     }
 }
 
-void PRINT_TYPE(Store *HEAD,int TYPE){
+void PRINT_TYPE(Store *HEAD){
     Store *p;
+    printf("What type do you want? (CHICKEN_RICE / JAPANESE / KOREAN / AMERICAN / CHINESE / BREAKFAST / DRINKS / DESSERT)\n");
+    char type[36];
+    scanf("%s",type);
+    int TYPE=gettype(type);
     printf("NAME\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tDISTANCE\tPRICE\n");
     for(p=HEAD;p!=NULL;p=p->next){
     	if(p->type == TYPE){		
