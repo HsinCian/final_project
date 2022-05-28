@@ -1,7 +1,7 @@
 #include "struct.h"
 #include "myIO.h"
 #include "distance.h"
-
+#include <math.h>
 
 #define PI                      3.1415926
 #define EARTH_RADIUS            6378.137        //地球近似半徑
