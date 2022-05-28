@@ -19,7 +19,11 @@ void RANDOM(Store *HEAD){
     	printf("\t%04d\t%04d\t%d\n",p->time[0],p->time[1],p->price);
 }
 
-void RANDOM_TYPE (Store *HEAD,int TYPE){
+void RANDOM_TYPE (Store *HEAD){
+    printf("What type do you want? (CHICKEN_RICE / JAPANESE / KOREAN / AMERICAN / CHINESE / BREAKFAST / DRINKS / DESSERT)\n");
+    char type[36];
+    scanf("%s",type);
+    int TYPE=gettype(type);
     Store *p;
     int count=0,typenumber[100],i=0;
     srand( time(NULL) );
