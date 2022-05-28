@@ -88,7 +88,7 @@ void RANDOM_NEAR(Store *HEAD){
     for (p = HEAD; p != NULL; p = p->next){
           lat2=p->latitude;
           lng2=p->longitude;
-          if(get_distance(lat1,lng1,lat2,lng2)<1){
+          if(GET_DISTANCE(lat1,lng1,lat2,lng2)<1){
             typenumber[i]=count;
 			i++;
           }
