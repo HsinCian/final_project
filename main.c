@@ -3,6 +3,7 @@
 #include "insert.h" //functions:INSERT(), DELETE(),PRINT(),SEARCH(), IS_OPEN();
 #include "sort_pointer_array.h" //any SORT();
 #include "random.h"
+#include "distance.h"
 
 int main(){
   Store *HEAD = NULL;
@@ -41,7 +42,8 @@ int main(){
     else if(strcmp(cmd, "PRINTTYPE") == 0) PRINT_TYPE(HEAD);
     else if(strcmp(cmd, "RANDOM") == 0) RANDOM(HEAD);
     else if(strcmp(cmd, "RANDOMTYPE") == 0) RANDOM_TYPE(HEAD)
-    }
+    else if(strcmp(cmd, "DISTANCE") == 0) DISTANCE(HEAD);
+    else if(strcmp(cmd, "RANDOMNEAR") == 0) RANDOM_NEAR(HEAD);
     else if(strcmp(cmd, "STOP") == 0){
             WRITE_BACK(HEAD);
             return 0;
