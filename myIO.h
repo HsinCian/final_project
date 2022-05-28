@@ -9,4 +9,6 @@ int INITIAL(Store **HEAD, int count);
 
 void WRITE_BACK(Store *HEAD);
 
+void WRITE_EXCEL(Store *HEAD);
+
 #endif
