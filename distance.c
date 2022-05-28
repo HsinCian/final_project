@@ -30,31 +30,32 @@ void DISTANCE(Store *HEAD){
     
     printf("Where are you? (Science / Engineering / Center / Dormitory / Gate / Minxiong_Station / Chiayi_Station)\n");
     scanf("%s", location);
-    if((strcmp(location, "Science"))== 0){
+    STRUPR(location);
+    if((strcmp(location, "SCIENCE"))== 0){
         lat1 = 23.564713;
         lng1 = 120.476228;
     }
-    if((strcmp(location, "Engineering"))== 0){
+    if((strcmp(location, "ENGINEERING"))== 0){
         lat1 = 23.562293;
         lng1 = 120.477894;
     }
-    if((strcmp(location, "Center"))== 0){
+    if((strcmp(location, "CENTER"))== 0){
         lat1 = 23.560825;
         lng1 = 120.472384;
     }
-    if((strcmp(location, "Dormitory"))== 0){
+    if((strcmp(location, "DORMITORY"))== 0){
         lat1 = 23.560451;
         lng1 = 120.469058;
     }
-    if((strcmp(location, "Gate"))== 0){
+    if((strcmp(location, "GATE"))== 0){
         lat1 = 23.558599; 
         lng1 = 120.471946;
     }
-    if((strcmp(location, "Minxiong_Station"))== 0){
+    if((strcmp(location, "MINXIONG_STATION"))== 0){
         lat1 = 23.555316;
         lng1 = 120.431967;
     }
-    if((strcmp(location, "Chiayi_Station"))== 0){
+    if((strcmp(location, "CHIAYI_STATION"))== 0){
         lat1 = 23.479372;
         lng1 = 120.441165;
     }
