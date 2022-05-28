@@ -1,5 +1,6 @@
 #include "struct.h"
 #include "myIO.h"
+#include "distance.h"
 #include "random.h"
 
 void RANDOM(Store *HEAD){
