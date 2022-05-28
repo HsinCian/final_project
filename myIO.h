@@ -1,6 +1,8 @@
 #ifndef MYIO_H
 #define MYIO_H
 
+void STRUPR(char *str);
+
 enum TYPE gettype(const char *string);
 
 void totype(char *string, enum TYPE type);
