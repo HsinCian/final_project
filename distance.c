@@ -108,6 +108,7 @@ void PRINTNEAR(Store *HEAD){
         lng1 = 120.441165;
     }
     Store *p;
+    printf("NAME\t\t\t\tTYPE\t\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tPRICE\n");
     for (p = HEAD; p != NULL; p = p->next){
           lat2=p->latitude;
           lng2=p->longitude;
