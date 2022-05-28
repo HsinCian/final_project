@@ -61,6 +61,7 @@ void DISTANCE(Store *HEAD){
     }
     Store *p;
     char Name[128];
+    printf("Where do you want to go?\n");
     scanf("%s",Name);
     for (p = HEAD; p != NULL; p = p->next){
 	    if (strcmp(p->name,Name)==0){
