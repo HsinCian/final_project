@@ -9,7 +9,7 @@ int main(){
   int count = 0;
   count = INITIAL(&HEAD, count);
   while(1){
-    char cmd[1];
+    char cmd[20];
     printf("What do you want to do? (INSERT / DELETE / SEARCH / IS_OPEN / SORT / STOP / PRINTTYPE / RANDOM / RANDOMTYPE)\n");
     scanf("%s", cmd);
     printf("%s\n", cmd);
