@@ -1,6 +1,13 @@
 #include "struct.h"
 #include "myIO.h"
 
+void STRUPR(char *str){
+	while(*str!='\0'){
+		*str=toupper(*str);
+		str++;
+	}
+}
+
 enum TYPE gettype(const char *string){
 	if(strcmp(string, "CHICKEN_RICE") == 0) return CHICKEN_RICE;
 	if(strcmp(string, "JAPANESE") == 0) return JAPANESE;
