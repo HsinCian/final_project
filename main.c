@@ -2,6 +2,7 @@
 #include "myIO.h"
 #include "insert.h" //functions:INSERT(), DELETE(),PRINT(),SEARCH(), IS_OPEN();
 #include "sort_pointer_array.h" //any SORT();
+#include "random.h"
 
 int main(){
   Store *HEAD = NULL;
