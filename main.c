@@ -12,6 +12,7 @@ int main(){
     char cmd[20];
     printf("What do you want to do? (INSERT / DELETE / SEARCH / IS_OPEN / SORT / STOP / PRINTTYPE / RANDOM / RANDOMTYPE)\n");
     scanf("%s", cmd);
+    STRUPR(cmd);
     printf("%s\n", cmd);
     int num_store;
     if(strcmp(cmd, "INSERT") == 0){
