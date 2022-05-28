@@ -90,3 +90,26 @@ void WRITE_BACK(Store *HEAD){
 	}
 	fclose(file);
 }
+
+void WRITE_EXCEL(Store *HEAD){
+	FILE *file;
+	file = fopen("output.csv", "w");
+	fprintf(file,"NAME\tTYPE\tPHONENUMBER\tLONGITUDE\t");
+	fprintf(file,"LATITUDE\tRATING\tOPEN\tCLOSE\tPRICE\n");
+	while(HEAD != NULL){
+		fprintf(file, "%s\t", HEAD->name);
+		char type[13];
+		totype(type, HEAD->type);
+		fprintf(file, "%s\t", type);
+            	fprintf(file, "%s\t", (HEAD->phonenumber));
+            	fprintf(file, "%lf\t",(HEAD->longitude));
+            	fprintf(file, "%lf\t",(HEAD->latitude)); 
+          	fprintf(file, "%.1f\t",(HEAD->rating));
+           	fprintf(file, "%04d\t",(HEAD->time[0]));
+            	fprintf(file, "%04d\t",(HEAD->time[1]));
+            	fprintf(file, "%d\n",(HEAD->price));
+		HEAD = HEAD -> next;
+	}
+	fclose(file);
+	system("xdg-open output.csv");
+}
