@@ -24,8 +24,7 @@ double GET_DISTANCE(double lat1, double lng1, double lat2, double lng2){
 void DISTANCE(Store *HEAD){
     char location[20];
     double lat1,lng1;
-    double lat2;
-    double lng2;
+    double lat2=0,lng2=0;
     // insert code here...
     
     printf("Where are you? (Science / Engineering / Center / Dormitory / Gate / Minxiong_Station / Chiayi_Station)\n");
@@ -69,7 +68,8 @@ void DISTANCE(Store *HEAD){
           lng2=p->longitude;
       }
     }
-    printf("dst = %0.3fkm\n", GET_DISTANCE(lat1,lng1,lat2,lng2));
+    if(lat2!=0 && lng2!=0)
+    	printf("dst = %0.3fkm\n", GET_DISTANCE(lat1,lng1,lat2,lng2));
 }
 
 void PRINTNEAR(Store *HEAD){
