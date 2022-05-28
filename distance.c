@@ -6,7 +6,7 @@
 #define PI                      3.1415926
 #define EARTH_RADIUS            6378.137        //地球近似半徑
 
-double get_distance(double lat1, double lng1, double lat2, double lng2){
+double GET_DISTANCE(double lat1, double lng1, double lat2, double lng2){
     // 求弧度
     double radLat1 = lat1 * PI / 180.0;
     double radLat2 = lat2 * PI / 180.0;
@@ -21,7 +21,7 @@ double get_distance(double lat1, double lng1, double lat2, double lng2){
     
 }
 
-void distance(Store *HEAD){
+void DISTANCE(Store *HEAD){
     char location[20];
     double lat1,lng1;
     double lat2;
@@ -67,7 +67,7 @@ void distance(Store *HEAD){
           lng2=p->longitude;
       }
     }
-    printf("dst = %0.3fkm\n", get_distance(lat1,lng1,lat2,lng2));
+    printf("dst = %0.3fkm\n", GET_DISTANCE(lat1,lng1,lat2,lng2));
 }
 
 void PRINTNEAR(Store *HEAD){
@@ -109,7 +109,7 @@ void PRINTNEAR(Store *HEAD){
     for (p = HEAD; p != NULL; p = p->next){
           lat2=p->latitude;
           lng2=p->longitude;
-          if(get_distance(lat1,lng1,lat2,lng2)<1){
+          if(GET_DISTANCE(lat1,lng1,lat2,lng2)<1){
             char type[13];
             totype(type, p->type);
             printf("%-30s\t%-12s\t\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
