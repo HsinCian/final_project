@@ -3,7 +3,7 @@
 
 void RANDOM(Store *HEAD);
 
-void RANDOM_TYPE (Store *HEAD,int TYPE);
+void RANDOM_TYPE (Store *HEAD);
 
 void RANDOM_NEAR(Store *HEAD);
 
