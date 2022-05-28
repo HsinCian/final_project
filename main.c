@@ -45,7 +45,7 @@ int main(){
     else if(strcmp(cmd, "PRINT") == 0)      PRINT(HEAD);
     else if(strcmp(cmd, "PRINTTYPE") == 0)  PRINT_TYPE(HEAD);
     else if(strcmp(cmd, "RANDOM") == 0)     RANDOM(HEAD);
-    else if(strcmp(cmd, "RANDOMTYPE") == 0) RANDOM_TYPE(HEAD)
+    else if(strcmp(cmd, "RANDOMTYPE") == 0) RANDOM_TYPE(HEAD);
     else if(strcmp(cmd, "DISTANCE") == 0)   DISTANCE(HEAD);
     else if(strcmp(cmd, "RANDOMNEAR") == 0) RANDOM_NEAR(HEAD);
     else if(strcmp(cmd, "STOP") == 0){
