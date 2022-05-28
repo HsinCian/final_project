@@ -34,6 +34,7 @@ int main(){
       printf("%s\n", sort_by);
       SORT(&HEAD, sort_by, count); //sort by: name(照ASCII), longitude, latitude, rating
       PRINT(HEAD);
+      WRITE_EXCEL(HEAD);
     }
     else if(strcmp(cmd, "PRINT") == 0) PRINT(HEAD);
     else if(strcmp(cmd, "PRINTTYPE") == 0) PRINT_TYPE(HEAD);
