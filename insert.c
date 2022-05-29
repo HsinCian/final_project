@@ -138,6 +138,6 @@ void PRINT_SORT(Store *HEAD,char sort_by[10]){
         if(strcmp(sort_by,"rating") == 0) printf("%-10d | ",p->rating);
         else if(strcmp(sort_by, "longitude") == 0) printf("%-10f | ",p->longitude);
         else if(strcmp(sort_by, "latitude") == 0) printf("%-10f | ",p->latitude); 
-	printf("%-4d | %-4d\n",p->time[0],p->time[1]);
+	printf("%04d | %04d\n",p->time[0],p->time[1]);
     }
 }
