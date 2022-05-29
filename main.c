@@ -11,7 +11,7 @@ int main(){
   count = INITIAL(&HEAD, count);
   while(1){
     char cmd[20];
-    printf("What do you want to do? (INSERT / DELETE / SEARCH / IS_OPEN / SORT / PRINT / PRINTTYPE / PRINTNEAR / RANDOM / RANDOMTYPE / RANDOMNEAR / DISTANCE / PRINTNEAR / STOP)\n");
+    printf("What do you want to do? (INSERT / DELETE / SEARCH / IS_OPEN / SORT / PRINT / PRINTTYPE / PRINTNEAR / RANDOM / RANDOMTYPE / RANDOMNEAR / DISTANCE / STOP)\n");
     scanf("%s", cmd);
     STRUPR(cmd);
     printf("%s\n", cmd);
