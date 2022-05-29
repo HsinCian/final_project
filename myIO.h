@@ -13,4 +13,6 @@ void WRITE_BACK(Store *HEAD);
 
 void WRITE_EXCEL(Store *HEAD);
 
+void MAP(Store *HEAD);
+
 #endif
