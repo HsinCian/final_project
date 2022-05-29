@@ -36,7 +36,6 @@ int main(){
       SEARCH(HEAD,Name);
       RECORD_SEARCH(HEAD, Name, rec);
     }
-    else if(strcmp(cmd, "IS_OPEN") == 0) IS_OPEN(HEAD); //可以用這個取得當下時間printf("Current time: %s",__TIME__); output: Current time: 19:54:39
     else if(strcmp(cmd, "SORT") == 0){
       char sort_by[10];
       scanf("%s", sort_by);
