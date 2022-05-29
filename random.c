@@ -53,36 +53,48 @@ void RANDOM_NEAR(Store *HEAD){
     double lng2;
     // insert code here...
 
-    printf("Where are you? (Science / Engineering / Center / Dormitory / Gate / Minxiong_Station / Chiayi_Station)\n");
+    while(1){
+    printf("Where are you? (SCIENCE / ENGINEERING / CENTER / DORMITORY / GATE / MINXIONG_STATION / CHIAYI_STATION)\n");
     scanf("%s", location);
     STRUPR(location);
     if((strcmp(location, "SCIENCE"))== 0){
         lat1 = 23.564713;
         lng1 = 120.476228;
+	break;
     }
-    if((strcmp(location, "ENGINEERING"))== 0){
+    else if((strcmp(location, "ENGINEERING"))== 0){
         lat1 = 23.562293;
         lng1 = 120.477894;
+	break;
     }
-    if((strcmp(location, "CENTER"))== 0){
+    else if((strcmp(location, "CENTER"))== 0){
         lat1 = 23.560825;
         lng1 = 120.472384;
+	break;
     }
-    if((strcmp(location, "DORMITORY"))== 0){
+    else if((strcmp(location, "DORMITORY"))== 0){
         lat1 = 23.560451;
         lng1 = 120.469058;
+	break;
     }
-    if((strcmp(location, "GATE"))== 0){
-        lat1 = 23.558599;
+    else if((strcmp(location, "GATE"))== 0){
+        lat1 = 23.558599; 
         lng1 = 120.471946;
+	break;
     }
-    if((strcmp(location, "MINXIONG_STATION"))== 0){
+    else if((strcmp(location, "MINXIONG_STATION"))== 0){
         lat1 = 23.555316;
         lng1 = 120.431967;
+	break;
     }
-    if((strcmp(location, "CHIAYI_STATION"))== 0){
+    else if((strcmp(location, "CHIAYI_STATION"))== 0){
         lat1 = 23.479372;
         lng1 = 120.441165;
+	break;
+    }
+    else{
+    	printf("INVALID OPERATION, please input again\n");
+    }
     }
     Store *p;
     srand( time(NULL) );
