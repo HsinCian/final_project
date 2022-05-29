@@ -47,7 +47,7 @@ int main(){
       printf("Do you want to export to Excel?(Y/N)\n");
       char t[5];
       scanf("%s",t);
-      if(strcmp("N",t)==0||strcmp("n",t)==0)PRINT(HEAD);
+      if(strcmp("N",t)==0||strcmp("n",t)==0)PRINT_SORT(HEAD,sort_by);
       else if(strcmp("Y",t)==0||strcmp("y",t)==0)WRITE_EXCEL(HEAD);
       else printf("Please try again!\n");//Firstly writting data into output.csv. Secondly opening the file by appropriate program such as Excel or Liberoffice.
     }
