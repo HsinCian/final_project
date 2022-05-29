@@ -28,7 +28,11 @@ int main(){
       DELETE(num_store,&HEAD);
       PRINT(HEAD);
     }
-    else if(strcmp(cmd, "SEARCH") == 0) SEARCH(HEAD);
+    else if(strcmp(cmd, "SEARCH") == 0){
+      char Name[128];
+      scanf("%s",Name);
+      SEARCH(HEAD,Name);
+    }
     else if(strcmp(cmd, "IS_OPEN") == 0) IS_OPEN(HEAD); //可以用這個取得當下時間printf("Current time: %s",__TIME__); output: Current time: 19:54:39
     else if(strcmp(cmd, "SORT") == 0){
       char sort_by[10];
