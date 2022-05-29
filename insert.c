@@ -135,7 +135,7 @@ void PRINT_SORT(Store *HEAD,char sort_by[10]){
     printf("%*s | %*s | %*s | %*s | %*s\n",-30,"NAME",-12,"PHONENUMBER",-10,sort_by,-4,"OPEN",-4,"CLOSE");
     for(p=HEAD;p!=NULL;p=p->next){ 	
         printf("%-30s | %-12s | ",p->name,p->phonenumber);
-        if(strcmp(sort_by,"rating") == 0) printf("%-10d | ",p->rating);
+        if(strcmp(sort_by,"rating") == 0) printf("%-10.1f | ",p->rating);
         else if(strcmp(sort_by, "longitude") == 0) printf("%-10f | ",p->longitude);
         else if(strcmp(sort_by, "latitude") == 0) printf("%-10f | ",p->latitude); 
 	printf("%04d | %04d\n",p->time[0],p->time[1]);
