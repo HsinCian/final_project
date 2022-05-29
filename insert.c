@@ -89,26 +89,20 @@ void DELETE(int num_store,Store **HEAD){
 }
 
 void IS_OPEN(Store *p){
-	// Print the opening time.
-	// If Name doesn’t exit, print “INVALID OPERATION”
-	if (strcmp(p->name,Name)==0){
-		const char * const delim = ":";
-		char buf[30] = {0};
-		char *substr = NULL;
-		strcpy(buf, __TIME__);
-		substr = strtok(buf, delim);
-		int time1,time2;
-		time1 = atoi(substr);
-		substr = strtok(NULL, delim);
-		time2 = atoi(substr);
-		if(p->time[0] <= (100*time1+time2) && (100*time1+time2) <= p->time[1]){
-			printf("YES\n");
-		}
-		else
-			printf("NO\n");
-		return;
-		}
+	const char * const delim = ":";
+	char buf[30] = {0};
+	char *substr = NULL;
+	strcpy(buf, __TIME__);
+	substr = strtok(buf, delim);
+	int time1,time2;
+	time1 = atoi(substr);
+	substr = strtok(NULL, delim);
+	time2 = atoi(substr);
+	if(p->time[0] <= (100*time1+time2) && (100*time1+time2) <= p->time[1]){
+		printf("YES\n");
 	}
+	else
+	printf("NO\n");
 }
 
 void SEARCH(Store *HEAD,char Name[128]){
