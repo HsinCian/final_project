@@ -67,7 +67,7 @@ void LOCATE(double *lat1, double *lng1){
 	    }
     }
 }
-void DISTANCE(Store *HEAD){
+void DISTANCE(Store *HEAD,double lat1, double lng1){
     double lat2=0,lng2=0;
     // insert code here...
     Store *p;
@@ -88,7 +88,7 @@ void DISTANCE(Store *HEAD){
     }	
 }
 
-void PRINTNEAR(Store *HEAD){
+void PRINTNEAR(Store *HEAD,double lat1, double lng1){
     double lat2;
     double lng2;
     Store *p;
