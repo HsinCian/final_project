@@ -6,9 +6,11 @@
 
 double GET_DISTANCE(double lat1, double lng1, double lat2, double lng2);
 
-void DISTANCE(Store *HEAD);
+void LOCATE(double *lat1, double *lng1);
 
-void PRINTNEAR(Store *HEAD);
+void DISTANCE(Store *HEAD,double lat1,double lng1);
+
+void PRINTNEAR(Store *HEAD,double lat1,double lng1);
 
 
 #endif
