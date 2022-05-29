@@ -79,8 +79,12 @@ void DISTANCE(Store *HEAD){
           lng2=p->longitude;
       }
     }
-    if(lat2!=0 && lng2!=0)
-    	printf("dst = %0.3fkm\n", GET_DISTANCE(lat1,lng1,lat2,lng2));
+    if(lat2!=0 && lng2!=0){
+	  printf("dst = %0.3fkm\n", GET_DISTANCE(lat1,lng1,lat2,lng2));
+    }
+    else{
+    	printf("INVALID OPERATION\n");
+    }	
 }
 
 void PRINTNEAR(Store *HEAD){
