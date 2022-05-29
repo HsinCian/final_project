@@ -4,14 +4,16 @@
 #include "sort_pointer_array.h" //any SORT();
 #include "random.h"
 #include "distance.h"
+#include "my_habit.h"
 
 int main(){
   Store *HEAD = NULL;
   int count = 0;
+  int rec[8] = {0};
   count = INITIAL(&HEAD, count);
   while(1){
     char cmd[20];
-    printf("What do you want to do? (INSERT / DELETE / SEARCH / IS_OPEN / SORT / PRINT / PRINTTYPE / PRINTNEAR / RANDOM / RANDOMTYPE / RANDOMNEAR / DISTANCE / STOP)\n");
+    printf("What do you want to do? (INSERT / DELETE / SEARCH / IS_OPEN / SORT / PRINT / PRINTTYPE / PRINTNEAR / RANDOM / RANDOMTYPE / RANDOMNEAR / DISTANCE / MY_HABIT / STOP)\n");
     scanf("%s", cmd);
     STRUPR(cmd);
     printf("%s\n", cmd);
@@ -32,6 +34,7 @@ int main(){
       char Name[128];
       scanf("%s",Name);
       SEARCH(HEAD,Name);
+      RECORD_SEARCH(HEAD, NAME, rec);
     }
     else if(strcmp(cmd, "IS_OPEN") == 0) IS_OPEN(HEAD); //可以用這個取得當下時間printf("Current time: %s",__TIME__); output: Current time: 19:54:39
     else if(strcmp(cmd, "SORT") == 0){
@@ -53,6 +56,7 @@ int main(){
     else if(strcmp(cmd, "RANDOMTYPE") == 0) RANDOM_TYPE(HEAD);
     else if(strcmp(cmd, "DISTANCE") == 0)   DISTANCE(HEAD);
     else if(strcmp(cmd, "RANDOMNEAR") == 0) RANDOM_NEAR(HEAD);
+    else if(strcmp(cmd, "MY_HABIT") == 0) MY_HABIT(HEAD, rec);
     else if(strcmp(cmd, "STOP") == 0){
             WRITE_BACK(HEAD);
             return 0;
