@@ -10,11 +10,12 @@ int main(){
   Store *HEAD = NULL;
   int count = 0;
   int rec[8] = {0};
+  double lat1, lng1;
   count = INITIAL(&HEAD, count);
   LOCATE(&lat1, &lng1);
   while(1){
     char cmd[20];
-    printf("What do you want to do?\n(INSERT / DELETE / SEARCH / IS_OPEN / SORT / PRINT / PRINTTYPE / PRINTNEAR / RANDOM / RANDOMTYPE / RANDOMNEAR / DISTANCE / MY_HABIT / STOP)\n");
+    printf("What do you want to do?\n(INSERT / DELETE / SEARCH / SORT / PRINT / PRINTTYPE / PRINTNEAR / RANDOM / RANDOMTYPE / RANDOMNEAR / DISTANCE / MY_HABIT / STOP)\n");
     scanf("%s", cmd);
     STRUPR(cmd);
     printf("%s\n", cmd);
