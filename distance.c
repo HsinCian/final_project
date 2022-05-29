@@ -77,7 +77,7 @@ void PRINTNEAR(Store *HEAD){
     double lat1,lng1;
     double lat2;
     double lng2;
-    printf("Where are you? (Science/Engineering/Center/Dormitory/Gate/Minxiong_Station/Chiayi_Station)\n");
+    printf("Where are you? (Science / Engineering / Center / Dormitory / Gate / Minxiong_Station / Chiayi_Station)\n");
     scanf("%s", location);
     STRUPR(location);
     if((strcmp(location, "SCIENCE"))== 0){
