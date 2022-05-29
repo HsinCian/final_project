@@ -56,6 +56,7 @@ int main(){
     else if(strcmp(cmd, "DISTANCE") == 0)   DISTANCE(HEAD);
     else if(strcmp(cmd, "RANDOMNEAR") == 0) RANDOM_NEAR(HEAD);
     else if(strcmp(cmd, "MY_HABIT") == 0) MY_HABIT(HEAD, rec);
+    else if(strcmp(cmd, "MAP") == 0) MAP(HEAD);
     else if(strcmp(cmd, "STOP") == 0){
             WRITE_BACK(HEAD);
             return 0;
