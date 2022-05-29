@@ -11,6 +11,8 @@ void INSERT(int num_store,Store **HEAD){
     char type[13];
     for(int i=0;i<num_store;i++){
         if(p!=NULL){
+	
+            printf("please give me what do you want add name type phonenumber longitude latitude rating open close price\n");
             new_node=(Store *)malloc(sizeof(Store));
             scanf("%s %s %s",(new_node->name),type,(new_node->phonenumber));
 	    new_node->type = gettype(type);
@@ -70,6 +72,7 @@ void DELETE(int num_store,Store **HEAD){
     char Name[128];
 
     for(int i=0;i<num_store;i++){
+	printf("please tell me ,what you want delete store's name\n");
         scanf("%s",Name);
         for(p=(*HEAD);p!=NULL;p=p->next){
             if(strcmp(p->name,Name)==0&&p!=(*HEAD)){
