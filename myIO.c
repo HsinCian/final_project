@@ -125,15 +125,9 @@ void MAP(Store *HEAD){
 	FILE *file;
 	file = fopen("map.txt", "w");
 	while(HEAD != NULL){
-		//fprintf(file, "%s\t", HEAD->name);
 		fprintf(file, "%d ", HEAD->type);
-            	//fprintf(file, "%s\t", (HEAD->phonenumber));
             	fprintf(file, "%lf ",(HEAD->longitude));
             	fprintf(file, "%lf\n",(HEAD->latitude)); 
-          	//fprintf(file, "%.1f\t",(HEAD->rating));
-           	//fprintf(file, "%04d\t",(HEAD->time[0]));
-            	//fprintf(file, "%04d\t",(HEAD->time[1]));
-            	//fprintf(file, "%d\n",(HEAD->price));
 		HEAD = HEAD -> next;
 	}
 	fclose(file);
