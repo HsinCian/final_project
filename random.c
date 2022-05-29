@@ -49,7 +49,7 @@ void RANDOM_TYPE (Store *HEAD){
     IS_OPEN(p);
 }
 
-void RANDOM_NEAR(Store *HEAD,double lat1,double lng1)){
+void RANDOM_NEAR(Store *HEAD,double lat1,double lng1){
     double lat2;
     double lng2;
     // insert code here...
