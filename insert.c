@@ -109,7 +109,6 @@ void IS_OPEN(Store *p){
 		return;
 		}
 	}
-	printf("INVALID OPERATION\n");
 }
 
 void SEARCH(Store *HEAD,char Name[128]){
