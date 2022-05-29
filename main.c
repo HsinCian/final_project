@@ -40,6 +40,7 @@ int main(){
     }
     else if(strcmp(cmd, "SORT") == 0){
       char sort_by[10];
+      printf("What do you want to sort? (longitude / latitude / rating)\n");
       scanf("%s", sort_by);
       printf("%s\n", sort_by);
       SORT(&HEAD, sort_by, count); //sort by: name(照ASCII), longitude, latitude, rating
