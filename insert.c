@@ -41,6 +41,7 @@ void PRINT(Store *HEAD){
 	totype(type, p->type);    	
         printf("%-30s\t%-12s\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
 	printf("\t%04d\t%04d\t%d\n",p->time[0],p->time[1],p->price);
+	IS_OPEN(p);
     }
 }
 
@@ -57,6 +58,7 @@ void PRINT_TYPE(Store *HEAD){
 		totype(type, p->type);    	
 		printf("%-30s\t%-12s\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
 		printf("\t%04d\t%04d\t%d\n",p->time[0],p->time[1],p->price);
+		IS_OPEN(p);
 	}
     }
 }
@@ -86,34 +88,28 @@ void DELETE(int num_store,Store **HEAD){
     }
 }
 
-void IS_OPEN(Store *HEAD){
+void IS_OPEN(Store *p){
 	// Print the opening time.
 	// If Name doesn’t exit, print “INVALID OPERATION”
-	Store *p;
-	char Name[128];
-	scanf("%s",Name);
-	for (p = HEAD; p != NULL; p = p->next){
-		if (strcmp(p->name,Name)==0){
-			const char * const delim = ":";
-			char buf[30] = {0};
-			char *substr = NULL;
-			strcpy(buf, __TIME__);
-			substr = strtok(buf, delim);
-			int time1,time2;
-			time1 = atoi(substr);
-			substr = strtok(NULL, delim);
-			time2 = atoi(substr);
-			if(p->time[0] <= (100*time1+time2) && (100*time1+time2) <= p->time[1]){
-			    printf("YES\n");
-			}
-			else
-			    printf("NO\n");
-			
-			return;
+	if (strcmp(p->name,Name)==0){
+		const char * const delim = ":";
+		char buf[30] = {0};
+		char *substr = NULL;
+		strcpy(buf, __TIME__);
+		substr = strtok(buf, delim);
+		int time1,time2;
+		time1 = atoi(substr);
+		substr = strtok(NULL, delim);
+		time2 = atoi(substr);
+		if(p->time[0] <= (100*time1+time2) && (100*time1+time2) <= p->time[1]){
+			printf("YES\n");
+		}
+		else
+			printf("NO\n");
+		return;
 		}
 	}
 	printf("INVALID OPERATION\n");
-	
 }
 
 void SEARCH(Store *HEAD,char Name[128]){
@@ -126,6 +122,7 @@ void SEARCH(Store *HEAD,char Name[128]){
 		printf("NAME\t\t\t\tTYPE\t\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tPRICE\n");
 		printf("%-30s\t%-12s\t\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
 		printf("\t%04d\t%04d\t%d\n",p->time[0],p->time[1],p->price);
+		IS_OPEN(p);
 		return;
 	}
   }
@@ -143,5 +140,6 @@ void PRINT_SORT(Store *HEAD,char sort_by[10]){
         else if(strcmp(sort_by, "longitude") == 0) printf("%-10f | ",p->longitude);
         else if(strcmp(sort_by, "latitude") == 0) printf("%-10f | ",p->latitude); 
 	printf("%-4d | %-4d\n",p->time[0],p->time[1]);
+	IS_OPEN(p);
     }
 }
