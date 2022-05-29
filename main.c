@@ -11,7 +11,7 @@ int main(){
   int count = 0;
   int rec[8] = {0};
   count = INITIAL(&HEAD, count);
-  LOCATE(&lat1, &lng1)
+  LOCATE(&lat1, &lng1);
   while(1){
     char cmd[20];
     printf("What do you want to do?\n(INSERT / DELETE / SEARCH / IS_OPEN / SORT / PRINT / PRINTTYPE / PRINTNEAR / RANDOM / RANDOMTYPE / RANDOMNEAR / DISTANCE / MY_HABIT / STOP)\n");
