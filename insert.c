@@ -141,8 +141,11 @@ void IS_OPEN(Store *p){
 void SEARCH(Store *HEAD,char Name[128]){
 	// If Name doesn’t exit, print “INVALID OPERATION”
 	Store *p;
-  for (p = HEAD; p != NULL; p = p->next){
-	if (strcmp(p->name,Name)==0){
+	file = fopen("input.txt", "r");
+	fscanf(file, "%s", Name);
+	fclose(file);
+  	for (p = HEAD; p != NULL; p = p->next){
+		if (strcmp(p->name,Name)==0){
 		char type[13];
 		totype(type, p->type);
 		printf("NAME\t\t\t\tTYPE\t\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tPRICE\tOPEN?\n");
@@ -151,10 +154,9 @@ void SEARCH(Store *HEAD,char Name[128]){
 		IS_OPEN(p);
 		printf("\n");
 		return;
-	}
-  }
-  printf("INVALID OPERATION\n");
-    
+		}
+  	}
+  	printf("INVALID OPERATION\n");   
 }
 
 
