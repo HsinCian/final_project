@@ -3,15 +3,13 @@
 #include "insert.h"
 //INSERT(), DELETE(),PRINT(),SEARCH(), IS_OPEN()
 
-void INSERT(int num_store,Store **HEAD){
+void INSERT(Store **HEAD){
     Store *p,*pre=(*HEAD),*new_node;
     for(p=(*HEAD);p!=NULL;p=p->next)
         pre=p;
     p=pre;//這樣才是正確的最後位置
     char type[13];
-    for(int i=0;i<num_store;i++){
-        if(p!=NULL){
-	
+    if(p!=NULL){
             printf("please give me what do you want add name type phonenumber longitude latitude rating open close price\n");
             new_node=(Store *)malloc(sizeof(Store));
             scanf("%s %s %s",(new_node->name),type,(new_node->phonenumber));
@@ -22,7 +20,7 @@ void INSERT(int num_store,Store **HEAD){
             p->next=new_node;
             p=p->next;
         }
-        else{
+    else{
             (*HEAD)=malloc(sizeof(Store));
             scanf("%s %s %s",(*HEAD)->name,type,(*HEAD)->phonenumber);
 	    (*HEAD)->type = gettype(type);
@@ -31,7 +29,6 @@ void INSERT(int num_store,Store **HEAD){
             (*HEAD)->next=NULL;
             p=(*HEAD);
         }
-    }
 }
 
 
@@ -67,11 +64,11 @@ void PRINT_TYPE(Store *HEAD){
     }
 }
 
-void DELETE(int num_store,Store **HEAD){
+void DELETE(Store **HEAD){
     Store *p,*pre=NULL;
     char Name[128];
 
-    for(int i=0;i<num_store;i++){
+    
 	printf("please tell me ,what you want delete store's name\n");
         scanf("%s",Name);
         for(p=(*HEAD);p!=NULL;p=p->next){
@@ -90,7 +87,7 @@ void DELETE(int num_store,Store **HEAD){
         }
         if(p==NULL)
             printf("INVALID OPERATION\n");
-    }
+    
 }
 
 void IS_OPEN(Store *p){
