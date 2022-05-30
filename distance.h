@@ -10,7 +10,7 @@ void LOCATE(double *lat1, double *lng1);
 
 void DISTANCE(Store *HEAD,double lat1,double lng1);
 
-void PRINTNEAR(Store *HEAD,double lat1,double lng1);
+void PRINT_NEAR(Store *HEAD,double lat1,double lng1);
 
 
 #endif
