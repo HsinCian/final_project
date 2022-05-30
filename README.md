@@ -1,13 +1,8 @@
 # Project Title 项目名称
 
 > Eat to live but do not know what to eat!
-> Use our program to help you decide today's meal
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
-
-用一两段话介绍这个项目以及它能做些什么。
+Use our program to help you decide today's meal
 
 ![](https://github.com/dbader/readme-template/raw/master/header.png)
 
