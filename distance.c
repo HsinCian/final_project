@@ -142,7 +142,7 @@ void PRINTNEAR(Store *HEAD,double lat1, double lng1){
     for (p = HEAD; p != NULL; p = p->next){
           lat2=p->latitude;
           lng2=p->longitude;
-          if(GET_DISTANCE(lat1,lng1,lat2,lng2)<1){
+          if(GET_DISTANCE(lat1,lng1,lat2,lng2)<2){
             char type[13];
             totype(type, p->type);
             printf("%-30s\t%-12s\t\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
