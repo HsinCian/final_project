@@ -13,6 +13,8 @@ void WRITE_BACK(Store *HEAD);
 
 void WRITE_EXCEL(Store *HEAD);
 
-void MAP(Store *HEAD);
+void MAP(Store *HEAD,double lat1, double lng1);
+
+void MAPNEAR(Store *HEAD,double lat1, double lng1);
 
 #endif
