@@ -15,8 +15,13 @@ int main(){
   LOCATE(&lat1, &lng1);
   while(1){
     char cmd[20];
-    printf("What do you want to do?\n(INSERT / DELETE / SEARCH / SORT / PRINT / PRINTTYPE / PRINTNEAR / RANDOM / RANDOMTYPE / RANDOMNEAR / DISTANCE / MY_HABIT / STOP)\n");
-    scanf("%s", cmd);
+    //printf("What do you want to do?\n(INSERT / DELETE / SEARCH / SORT / PRINT / PRINTTYPE / PRINTNEAR / RANDOM / RANDOMTYPE / RANDOMNEAR / DISTANCE / MY_HABIT / STOP)\n");
+    //scanf("%s", cmd);
+    system("python3 button.py");
+    FILE *file;
+    file = fopen("cmd.txt", "r");
+    fscanf(file, "%s", cmd);
+    fclose(file);
     STRUPR(cmd);
     printf("%s\n", cmd);
     int num_store;
