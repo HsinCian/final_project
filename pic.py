@@ -35,7 +35,7 @@ for i in range(0,count):
     elif Type[i]==8:
         ax.scatter(X[i],Y[i],color='r')
 							
-ax.legend(('Your position','Chicken rice','Japanese','Korean','American','Chinese','Breakfast','Drinks','Dissert'))
+ax.legend(('Your position','Chicken rice','Japanese','Korean','American','Chinese','Breakfast','Drinks','Dessert'))
 leg=ax.get_legend()
 leg.legendHandles[0].set_color('r')
 leg.legendHandles[1].set_color('olive')
