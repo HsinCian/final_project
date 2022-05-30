@@ -33,15 +33,17 @@ void INSERT(Store **HEAD){
         }
     else{
             (*HEAD)=malloc(sizeof(Store));
-	    fscanf(file, "%s", (*HEAD->name));
+		FILE *file;
+		file = fopen("input.txt", "r");
+	    fscanf(file, "%s", ((*HEAD)->name));
 	    fscanf(file, "%s", type);
-	    fscanf(file, "%s", (*HEAD->phonenumber));
-	    fscanf(file, "%lf", &(*HEAD->longitude));
-	    fscanf(file, "%lf", &(*HEAD->latitude));
-	    fscanf(file, "%f", &(*HEAAD->rating));
-	    fscanf(file, "%d", &(*HEAD->time[0]));
-	    fscanf(file, "%d", &(*HEAD->time[1]));
-	    fscanf(file, "%d", &(*HEAD->price));
+	    fscanf(file, "%s", ((*HEAD)->phonenumber));
+	    fscanf(file, "%lf", &((*HEAD)->longitude));
+	    fscanf(file, "%lf", &((*HEAD)->latitude));
+	    fscanf(file, "%f", &((*HEAD)->rating));
+	    fscanf(file, "%d", &((*HEAD)->time[0]));
+	    fscanf(file, "%d", &((*HEAD)->time[1]));
+	    fscanf(file, "%d", &((*HEAD)->price));
             //scanf("%s %s %s",(*HEAD)->name,type,(*HEAD)->phonenumber);
 	    (*HEAD)->type = gettype(type);
             //scanf("%lf %lf",&((*HEAD)->longitude),&((*HEAD)->latitude));
@@ -54,7 +56,7 @@ void INSERT(Store **HEAD){
 
 void PRINT(Store *HEAD){
     Store *p;
-    printf("NAME\t\t\t\tTYPE\t\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tPRICE\tOPEN?\n");
+    printf("NAME\t\t\t\tTYPE\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tPRICE\tOPEN?\n");
     for(p=HEAD;p!=NULL;p=p->next){
 	char type[13];
 	totype(type, p->type);    	
@@ -67,11 +69,15 @@ void PRINT(Store *HEAD){
 
 void PRINT_TYPE(Store *HEAD){
     Store *p;
-    printf("What type do you want? (CHICKEN_RICE / JAPANESE / KOREAN / AMERICAN / CHINESE / BREAKFAST / DRINKS / DESSERT)\n");
+    //printf("What type do you want? (CHICKEN_RICE / JAPANESE / KOREAN / AMERICAN / CHINESE / BREAKFAST / DRINKS / DESSERT)\n");
     char type[36];
-    scanf("%s",type);
+    //scanf("%s",type);
+	FILE *file;
+	file = fopen("input.txt", "r");
+	fscanf (file, "%s", type);
+	fclose(file);
     int TYPE=gettype(type);
-    printf("NAME\t\t\t\tTYPE\t\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tPRICE\tOPEN?\n");
+    printf("NAME\t\t\t\tTYPE\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tPRICE\tOPEN?\n");
     for(p=HEAD;p!=NULL;p=p->next){
     	if(p->type == TYPE){		
 		char type[13];
