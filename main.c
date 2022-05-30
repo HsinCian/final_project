@@ -38,9 +38,6 @@ int main(){
     else if(strcmp(cmd, "SEARCH") == 0){
       char Name[128];
       //scanf("%s",Name);
-      file = fopen("input.txt", "r");
-	    fscanf(file, "%s", Name);
-	    fclose(file);
       SEARCH(HEAD,Name);
       RECORD_SEARCH(HEAD, Name, rec);
     }
