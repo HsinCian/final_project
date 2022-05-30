@@ -1,13 +1,13 @@
 #ifndef INSERT_H
 #define INSERT_H
 
-void INSERT(int num_store,Store **HEAD);
+void INSERT(Store **HEAD);
 
 void PRINT(Store *HEAD);
 
 void PRINT_TYPE(Store *HEAD);
 
-void DELETE(int num_store,Store **HEAD);
+void DELETE(Store **HEAD);
 
 void IS_OPEN(Store *HEAD);
 
