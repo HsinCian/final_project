@@ -1,5 +1,6 @@
 #include "struct.h"
 #include "myIO.h"
+#include "distance.h"
 
 void STRUPR(char *str){
 	while(*str!='\0'){
@@ -121,9 +122,12 @@ void WRITE_EXCEL(Store *HEAD){
 	system("xdg-open output.csv");
 }
 
-void MAP(Store *HEAD){
+void MAP(Store *HEAD,double lat1,double lng1){
 	FILE *file;
 	file = fopen("map.txt", "w");
+	fprintf(file, "8 ");
+        fprintf(file, "%lf ",lng1);
+        fprintf(file, "%lf\n",lat1);
 	while(HEAD != NULL){
 		fprintf(file, "%d ", HEAD->type);
             	fprintf(file, "%lf ",(HEAD->longitude));
@@ -131,5 +135,27 @@ void MAP(Store *HEAD){
 		HEAD = HEAD -> next;
 	}
 	fclose(file);
+	system("python3 pic.py");
+}
+
+void MAPNEAR(Store *HEAD,double lat1, double lng1){
+	double lat2;
+	double lng2;
+	Store *p;
+	FILE *file;
+	file = fopen("map.txt", "w");
+	fprintf(file, "8 ");
+        fprintf(file, "%lf ",lng1);
+        fprintf(file, "%lf\n",lat1);
+	for (p = HEAD; p != NULL; p = p->next){
+		lat2=p->latitude;
+		lng2=p->longitude;
+		if(GET_DISTANCE(lat1,lng1,lat2,lng2)<2){
+           	 	fprintf(file, "%d ", p->type);
+            		fprintf(file, "%lf ",(p->longitude));
+            		fprintf(file, "%lf\n",(p->latitude));
+		}
+    	}
+    	fclose(file);
 	system("python3 pic.py");
 }
