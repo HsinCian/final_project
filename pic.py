@@ -34,8 +34,18 @@ for i in range(0,count):
         ax.scatter(X[i],Y[i],color='lightsalmon')
     elif Type[i]==8:
         ax.scatter(X[i],Y[i],color='r')
-
 							
-ax.legend(['Store'])
+ax.legend(('Your position','Chicken rice','Japanese','Korean','American','Chinese','Breakfast','Drinks','Dissert'))
+leg=ax.get_legend()
+leg.legendHandles[0].set_color('r')
+leg.legendHandles[1].set_color('olive')
+leg.legendHandles[2].set_color('lightskyblue')
+leg.legendHandles[3].set_color('navy')
+leg.legendHandles[4].set_color('seagreen')
+leg.legendHandles[5].set_color('purple')
+leg.legendHandles[6].set_color('pink')
+leg.legendHandles[7].set_color('slategrey')
+leg.legendHandles[8].set_color('lightsalmon')
+
 ax.set_title('MAP')
 plt.show();
