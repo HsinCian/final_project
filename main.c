@@ -58,9 +58,9 @@ int main(){
       else printf("Please try again!\n");//Firstly writting data into output.csv. Secondly opening the file by appropriate program such as Excel or Liberoffice.
     }
     else if(strcmp(cmd, "PRINT") == 0)      PRINT(HEAD);
-    else if(strcmp(cmd, "PRINTTYPE") == 0)  PRINT_TYPE(HEAD);
+    else if(strcmp(cmd, "PRINT_TYPE") == 0)  PRINT_TYPE(HEAD);
     else if(strcmp(cmd, "RANDOM") == 0)     RANDOM(HEAD);
-    else if(strcmp(cmd, "PRINTNEAR") == 0)     PRINT_NEAR(HEAD,lat1,lng1);
+    else if(strcmp(cmd, "PRINT_NEAR") == 0)     PRINT_NEAR(HEAD,lat1,lng1);
     else if(strcmp(cmd, "RANDOMTYPE") == 0) RANDOM_TYPE(HEAD);
     else if(strcmp(cmd, "DISTANCE") == 0)   DISTANCE(HEAD,lat1,lng1);
     else if(strcmp(cmd, "RANDOMNEAR") == 0) RANDOM_NEAR(HEAD,lat1,lng1);
