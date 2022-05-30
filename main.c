@@ -26,15 +26,13 @@ int main(){
     printf("%s\n", cmd);
     int num_store;
     if(strcmp(cmd, "INSERT") == 0){
-      scanf("%d", &num_store);
-      count = count + num_store;
-      INSERT(num_store,&HEAD); //參數都丟在裡面ㄌ
+      count = count + 1;
+      INSERT(&HEAD); //參數都丟在裡面ㄌ
       PRINT(HEAD);
     }
     else if(strcmp(cmd, "DELETE") == 0){
-      scanf("%d", &num_store);
-      count = count - num_store;
-      DELETE(num_store,&HEAD);
+      count = count - 1;
+      DELETE(&HEAD);
       PRINT(HEAD);
     }
     else if(strcmp(cmd, "SEARCH") == 0){
