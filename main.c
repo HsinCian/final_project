@@ -36,10 +36,7 @@ int main(){
       DELETE(&HEAD);
       PRINT(HEAD);
     }
-    else if(strcmp(cmd, "SEARCH") == 0){
-      SEARCH(HEAD);
-      RECORD_SEARCH(HEAD, Name, rec);
-    }
+    else if(strcmp(cmd, "SEARCH") == 0)SEARCH(HEAD);
     else if(strcmp(cmd, "SORT") == 0){
       char sort_by[10];
       printf("What do you want to sort? (longitude / latitude / rating)\n");
