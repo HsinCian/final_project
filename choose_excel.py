@@ -7,7 +7,7 @@ window.title('choose_excel')
 window.geometry('800x550')
 window.configure(background='white')
 
-header_label = tk.Label(window, text='Do you want to export to Excel?(Y/N)')
+header_label = tk.Label(window, text='Do you want to export to Excel?')
 header_label.pack()
 
 fo = open("YN.txt", "w")
