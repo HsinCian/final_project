@@ -4,53 +4,53 @@
 //INSERT(), DELETE(),PRINT(),SEARCH(), IS_OPEN()
 
 void INSERT(Store **HEAD){
-    Store *p,*pre=(*HEAD),*new_node;
-    for(p=(*HEAD);p!=NULL;p=p->next)
-        pre=p;
+  Store *p,*pre=(*HEAD),*new_node;
+  for(p=(*HEAD);p!=NULL;p=p->next)
+    pre=p;
     p=pre;//這樣才是正確的最後位置
     char type[13];
     if(p!=NULL){
-            //printf("please give me what do you want add name type phonenumber longitude latitude rating open close price\n");
-            new_node=(Store *)malloc(sizeof(Store));
-	    FILE *file;
-	    file = fopen("input.txt", "r");
-	    fscanf(file, "%s", (new_node->name));
-	    fscanf(file, "%s", type);
-	    fscanf(file, "%s", (new_node->phonenumber));
-	    fscanf(file, "%lf", &(new_node->longitude));
-	    fscanf(file, "%lf", &(new_node->latitude));
-	    fscanf(file, "%f", &(new_node->rating));
-	    fscanf(file, "%d", &(new_node->time[0]));
-	    fscanf(file, "%d", &(new_node->time[1]));
-	    fscanf(file, "%d", &(new_node->price));
-            //scanf("%s %s %s",(new_node->name),type,(new_node->phonenumber));
-	    new_node->type = gettype(type);
-            //scanf("%lf %lf",&(new_node->longitude),&(new_node->latitude));
-            //scanf("%f %d %d %d",&(new_node->rating),&(new_node->time[0]),&(new_node->time[1]),&(new_node->price));
-            new_node->next=p->next;
-            p->next=new_node;
-            p=p->next;
-        }
+    //printf("please give me what do you want add name type phonenumber longitude latitude rating open close price\n");
+      new_node=(Store *)malloc(sizeof(Store));
+      FILE *file;
+      file = fopen("input.txt", "r");
+      fscanf(file, "%s", (new_node->name));
+      fscanf(file, "%s", type);
+      fscanf(file, "%s", (new_node->phonenumber));
+      fscanf(file, "%lf", &(new_node->longitude));
+      fscanf(file, "%lf", &(new_node->latitude));
+      fscanf(file, "%f", &(new_node->rating));
+      fscanf(file, "%d", &(new_node->time[0]));
+      fscanf(file, "%d", &(new_node->time[1]));
+      fscanf(file, "%d", &(new_node->price));
+      //scanf("%s %s %s",(new_node->name),type,(new_node->phonenumber));
+      new_node->type = gettype(type);
+      //scanf("%lf %lf",&(new_node->longitude),&(new_node->latitude));
+      //scanf("%f %d %d %d",&(new_node->rating),&(new_node->time[0]),&(new_node->time[1]),&(new_node->price));
+      new_node->next=p->next;
+      p->next=new_node;
+      p=p->next;
+    }
     else{
-            (*HEAD)=malloc(sizeof(Store));
-		FILE *file;
-		file = fopen("input.txt", "r");
-	    fscanf(file, "%s", ((*HEAD)->name));
-	    fscanf(file, "%s", type);
-	    fscanf(file, "%s", ((*HEAD)->phonenumber));
-	    fscanf(file, "%lf", &((*HEAD)->longitude));
-	    fscanf(file, "%lf", &((*HEAD)->latitude));
-	    fscanf(file, "%f", &((*HEAD)->rating));
-	    fscanf(file, "%d", &((*HEAD)->time[0]));
-	    fscanf(file, "%d", &((*HEAD)->time[1]));
-	    fscanf(file, "%d", &((*HEAD)->price));
-            //scanf("%s %s %s",(*HEAD)->name,type,(*HEAD)->phonenumber);
-	    (*HEAD)->type = gettype(type);
-            //scanf("%lf %lf",&((*HEAD)->longitude),&((*HEAD)->latitude));
-            //scanf("%f %d %d %d",&((*HEAD)->rating),&((*HEAD)->time[0]),&((*HEAD)->time[1]),&((*HEAD)->price));
-            (*HEAD)->next=NULL;
-            p=(*HEAD);
-        }
+      (*HEAD)=malloc(sizeof(Store));
+      FILE *file;
+      file = fopen("input.txt", "r");
+      fscanf(file, "%s", ((*HEAD)->name));
+      fscanf(file, "%s", type);
+      fscanf(file, "%s", ((*HEAD)->phonenumber));
+      fscanf(file, "%lf", &((*HEAD)->longitude));
+      fscanf(file, "%lf", &((*HEAD)->latitude));
+      fscanf(file, "%f", &((*HEAD)->rating));
+      fscanf(file, "%d", &((*HEAD)->time[0]));
+      fscanf(file, "%d", &((*HEAD)->time[1]));
+      fscanf(file, "%d", &((*HEAD)->price));
+      //scanf("%s %s %s",(*HEAD)->name,type,(*HEAD)->phonenumber);
+      (*HEAD)->type = gettype(type);
+      //scanf("%lf %lf",&((*HEAD)->longitude),&((*HEAD)->latitude));
+      //scanf("%f %d %d %d",&((*HEAD)->rating),&((*HEAD)->time[0]),&((*HEAD)->time[1]),&((*HEAD)->price));
+      (*HEAD)->next=NULL;
+      p=(*HEAD);
+  }
 }
 
 
