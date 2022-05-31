@@ -4,7 +4,7 @@ import os, sys
 
 window = tk.Tk()
 window.title('print')
-window.geometry('800x550')
+window.geometry('300x200')
 window.configure(background='white')
 
 header_label = tk.Label(window, text='Print all, type or near')
