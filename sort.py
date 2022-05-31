@@ -4,7 +4,7 @@ import os, sys
 
 window = tk.Tk()
 window.title('sort')
-window.geometry('800x550')
+window.geometry('300x200')
 window.configure(background='white')
 
 header_label = tk.Label(window, text='Sort by what?')
