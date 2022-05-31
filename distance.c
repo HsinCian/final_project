@@ -71,6 +71,7 @@ void LOCATE(double *lat1, double *lng1){
     }
     else{
       printf("INVALID OPERATION, please input again\n");
+      system("python3 locate.py");
     }
   }
 }
