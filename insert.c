@@ -154,6 +154,7 @@ void SEARCH(Store *HEAD,int *rec){
     printf("\t%04d\t%04d\t%d\t",p->time[0],p->time[1],p->price);
     IS_OPEN(p);
     printf("\n");
+    RECORD_SEARCH(HEAD, Name, rec);
     return;
     }
   }
