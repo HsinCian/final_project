@@ -36,9 +36,7 @@ int main(){
       PRINT(HEAD);
     }
     else if(strcmp(cmd, "SEARCH") == 0){
-      char Name[128];
-      //scanf("%s",Name);
-      SEARCH(HEAD,Name);
+      SEARCH(HEAD);
       RECORD_SEARCH(HEAD, Name, rec);
     }
     else if(strcmp(cmd, "SORT") == 0){
