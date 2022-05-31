@@ -27,8 +27,12 @@ double GET_DISTANCE(double lat1, double lng1, double lat2, double lng2){
 void LOCATE(double *lat1, double *lng1){
   char location[20];
   while(1){
-    printf("Where are you? (SCIENCE / ENGINEERING / CENTER / DORMITORY / GATE / MINXIONG_STATION / CHIAYI_STATION)\n");
-    scanf("%s", location);
+    //printf("Where are you? (SCIENCE / ENGINEERING / CENTER / DORMITORY / GATE / MINXIONG_STATION / CHIAYI_STATION)\n");
+    //scanf("%s", location);
+    FILE *file;
+    file = fopen("input.txt", "r");
+    fscanf(file,"%s",location);
+    fclose(file);
     STRUPR(location);
     if((strcmp(location, "SCIENCE"))== 0){
       *lat1 = 23.564713;
