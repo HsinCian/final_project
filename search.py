@@ -4,7 +4,7 @@ import os, sys
 
 window = tk.Tk()
 window.title('search')
-window.geometry('800x550')
+window.geometry('300x100')
 window.configure(background='white')
 
 
