@@ -65,6 +65,11 @@ def RANDOM():
 def MAP():
     os.system("python3 map_button.py")
     sys.exit(0)
+    
+def LOCATE():
+    fo.close()
+    os.system("python3 locate.py")
+    sys.exit(0)
 
 fo = open("cmd.txt", "w")
 
@@ -86,6 +91,8 @@ habbit_btn = tk.Button(window, text='MY_HABIT', command = MY_HABBIT)
 habbit_btn.pack(padx=5, pady=10)
 map_btn = tk.Button(window, text='MAP', command = MAP)
 map_btn.pack(padx=5, pady=10)
+locate_btn = tk.Button(window, text='LOCATE', command = LOCATE)
+locate_btn.pack(padx=5, pady=10)
 stop_btn = tk.Button(window, text='STOP', command = STOP)
 stop_btn.pack(padx=5, pady=10)
 
