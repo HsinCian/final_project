@@ -9,6 +9,6 @@ int cmp_rating(const void* a,const void* b);
 
 //int cmp_distance(const void* a,const void* b);
 
-void SORT(Store **HEAD, char *sort_by, int count);
+void SORT(Store **HEAD, int count);
 
 #endif
