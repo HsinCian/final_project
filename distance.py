@@ -7,6 +7,8 @@ window.title('distance')
 window.geometry('800x550')
 window.configure(background='white')
 
+tk.Label(window, text='Where do you want to go?').pack(padx=5, pady=10)
+
 
 fo = open("input.txt", "w")
 
