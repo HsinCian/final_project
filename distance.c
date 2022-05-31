@@ -155,7 +155,7 @@ void PRINT_NEAR(Store *HEAD,double lat1, double lng1){
   double lat2;
   double lng2;
   Store *p;
-  printf("NAME\t\t\t\tTYPE\t\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tPRICE\n");
+  printf("NAME\t\t\t\tTYPE\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tPRICE\n");
   for (p = HEAD; p != NULL; p = p->next){
     lat2=p->latitude;
     lng2=p->longitude;
