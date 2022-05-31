@@ -1,5 +1,6 @@
 #include "struct.h"
 #include "sort_pointer_array.h"
+#include "insert.h"
 
 int cmp_longitude(const void* a,const void* b){
   if( (*(Store**)a)->longitude - (*(Store**)b)->longitude >0) return 1;
@@ -25,7 +26,12 @@ int cmp_rating(const void* a,const void* b){
   else return 0;
 }*/
 
-void SORT(Store **HEAD, char *sort_by, int count){
+void SORT(Store **HEAD, int count){
+	char sort_by[10];
+	FILE *file;
+	file = fopen("input.txt", "r");
+	fscanf(file, "%s", sort_by);
+	fclose(file);
 	Store *temp[count];
 	Store *head = *HEAD;
 	for (int i = 0; i < count; i++){
@@ -36,11 +42,12 @@ void SORT(Store **HEAD, char *sort_by, int count){
 
 	int i = count;
 	int j = 0;
-
+	
+	printf ("by:%s\n", sort_by);
     if(strcmp(sort_by,"longitude")==0){
       qsort(temp,i,sizeof(Store*),cmp_longitude);
     }
-    else if(strcmp(sort_by,"latitude")==0){
+	else if(strcmp(sort_by,"latitude")==0){
       qsort(temp,i,sizeof(Store*),cmp_latitude);
     }
 	else if(strcmp(sort_by,"rating")==0){
@@ -63,4 +70,11 @@ void SORT(Store **HEAD, char *sort_by, int count){
 		current = current->next;
 		j++;
 	}
+
+      char t[5];
+	  file = fopen("YN.txt", "r");
+	  fscanf(file, "%s", t);
+      if(strcmp("N",t)==0||strcmp("n",t)==0)PRINT_SORT(*HEAD,sort_by);
+      else if(strcmp("Y",t)==0||strcmp("y",t)==0)WRITE_EXCEL(*HEAD);
+      else printf("Please try again!\n");//Firstly writting data into output.csv. Secondly opening the file by appropriate program such as Excel or Liberoffice.*/
 }
