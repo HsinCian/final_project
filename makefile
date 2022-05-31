@@ -15,4 +15,4 @@ random.o: random.c random.h distance.h struct.h myIO.h
 my_habit.o: my_habit.c my_habit.h struct.h myIO.h
 	gcc -c my_habit.c
 all:
-	python3 pic.py button.py insert.py delete.py search.py print.py type.py distance.py random.py map.py
+	python3 pic.py button.py insert.py delete.py search.py print.py type.py distance.py random.py map_.py
