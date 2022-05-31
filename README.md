@@ -14,7 +14,7 @@ Use our program to help you decide today's meal
 Our UI need to install python3 in Linux:
 
 ```
-$sudo apt install python3-numpy python3-scipy python3-matplotlib
+$sudo apt install python3-matplotlib
 ```
 
 ### Usage example
