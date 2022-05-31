@@ -1,6 +1,6 @@
 # Project Title 项目名称
 
-> Eat to live but do not know what to eat!
+> Eat to live but do not know what to eat?
 
 Use our program to help you decide today's meal
 
