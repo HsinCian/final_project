@@ -36,19 +36,19 @@ int main(){
       DELETE(&HEAD);
       PRINT(HEAD);
     }
-    else if(strcmp(cmd, "SEARCH") == 0)SEARCH(HEAD,rec);
+    else if(strcmp(cmd, "SEARCH") == 0)SEARCH(HEAD);
     else if(strcmp(cmd, "SORT") == 0){
-      char sort_by[10];
+      /*char sort_by[10];
       printf("What do you want to sort? (longitude / latitude / rating)\n");
       scanf("%s", sort_by);
-      printf("%s\n", sort_by);
-      SORT(&HEAD, sort_by, count); //sort by: name(照ASCII), longitude, latitude, rating
-      printf("Do you want to export to Excel?(Y/N)\n");
+      printf("%s\n", sort_by);*/
+      SORT(&HEAD, count); //sort by: name(照ASCII), longitude, latitude, rating
+      /*printf("Do you want to export to Excel?(Y/N)\n");
       char t[5];
       scanf("%s",t);
       if(strcmp("N",t)==0||strcmp("n",t)==0)PRINT_SORT(HEAD,sort_by);
       else if(strcmp("Y",t)==0||strcmp("y",t)==0)WRITE_EXCEL(HEAD);
-      else printf("Please try again!\n");//Firstly writting data into output.csv. Secondly opening the file by appropriate program such as Excel or Liberoffice.
+      else printf("Please try again!\n");*///Firstly writting data into output.csv. Secondly opening the file by appropriate program such as Excel or Liberoffice.
     }
     else if(strcmp(cmd, "PRINT") == 0)          PRINT(HEAD);
     else if(strcmp(cmd, "PRINT_TYPE") == 0)     PRINT_TYPE(HEAD);
