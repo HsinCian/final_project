@@ -138,7 +138,7 @@ void IS_OPEN(Store *p){
 }
 
 
-void SEARCH(Store *HEAD,char Name[128]){
+void SEARCH(Store *HEAD){
   // If Name doesn’t exit, print “INVALID OPERATION”
   Store *p;
   FILE *file;
