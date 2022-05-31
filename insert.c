@@ -1,6 +1,7 @@
 #include "struct.h"
 #include "myIO.h"
 #include "insert.h"
+#include "my_habit.h"
 //INSERT, DELETE,PRINT,SEARCH, IS_OPEN,PRINT_SORT,PRINT_TYPE
 
 
@@ -138,7 +139,7 @@ void IS_OPEN(Store *p){
 }
 
 
-void SEARCH(Store *HEAD){
+void SEARCH(Store *HEAD,int *rec){
   // If Name doesn’t exit, print “INVALID OPERATION”
   Store *p;
   FILE *file;
@@ -156,7 +157,8 @@ void SEARCH(Store *HEAD){
     return;
     }
   }
-  printf("INVALID OPERATION\n");   
+  printf("INVALID OPERATION\n"); 
+  RECORD_SEARCH(HEAD, Name, rec);
 }
 
 
