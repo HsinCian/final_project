@@ -4,7 +4,7 @@ import os, sys
 
 window = tk.Tk()
 window.title('distance')
-window.geometry('300x100')
+window.geometry('300x150')
 window.configure(background='white')
 
 tk.Label(window, text='Where do you want to go?').pack(padx=5, pady=10)
