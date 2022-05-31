@@ -24,9 +24,13 @@ void RANDOM(Store *HEAD){
 }
 
 void RANDOM_TYPE (Store *HEAD){
-    printf("What type do you want? (CHICKEN_RICE / JAPANESE / KOREAN / AMERICAN / CHINESE / BREAKFAST / DRINKS / DESSERT)\n");
+    //printf("What type do you want? (CHICKEN_RICE / JAPANESE / KOREAN / AMERICAN / CHINESE / BREAKFAST / DRINKS / DESSERT)\n");
     char type[36];
-    scanf("%s",type);
+    //scanf("%s",type);
+	FILE *file;
+	file = fopen("input.txt", "r");
+	fscanf (file, "%s", type);
+	fclose(file);
     int TYPE=gettype(type);
     Store *p;
     int count=0,typenumber[100],i=0;
