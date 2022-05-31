@@ -43,6 +43,7 @@ def PRINT():
 def DISTANCE():
     fo.write("DISTANCE\n")
     fo.close()
+    os.system("python3 distance.py")
     sys.exit(0)
     
 def MY_HABBIT():
@@ -56,8 +57,9 @@ def STOP():
     sys.exit(0)
 
 def RANDOM():
-    fo.write("RANDOM\n")
-    fo.close()
+    os.system("python3 random.py")
+    #fo.write("RANDOM\n")
+    #fo.close()
     sys.exit(0)
 
 def MAP():
