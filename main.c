@@ -12,6 +12,7 @@ int main(){
   int rec[8] = {0};
   double lat1, lng1;
   count = INITIAL(&HEAD, count);
+  system("python3 locate.py");
   LOCATE(&lat1, &lng1);
   while(1){
     char cmd[20];
@@ -63,6 +64,7 @@ int main(){
     else if(strcmp(cmd, "MY_HABIT") == 0)       MY_HABIT(HEAD, rec);
     else if(strcmp(cmd, "MAP") == 0)            MAP(HEAD,lat1,lng1);
     else if(strcmp(cmd, "MAPNEAR") == 0)        MAPNEAR(HEAD,lat1,lng1);
+    else if(strcmp(cmd, "LOCATE") == 0)         LOCATE(&lat1,&lng1);
     else if(strcmp(cmd, "STOP") == 0){
             WRITE_BACK(HEAD);
             return 0;
