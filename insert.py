@@ -4,7 +4,7 @@ import os, sys
 
 window = tk.Tk()
 window.title('insert')
-window.geometry('800x550')
+window.geometry('300x550')
 window.configure(background='white')
 
 fo = open("input.txt", "w")
