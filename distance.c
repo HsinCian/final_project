@@ -118,8 +118,13 @@ void DISTANCE(Store *HEAD,double lat1, double lng1){
     // insert code here...
     Store *p;
     char Name[128];
-    printf("Where do you want to go?\n");
-    scanf("%s",Name);
+    //printf("Where do you want to go?\n");
+    //scanf("%s",Name);
+	FILE *file;
+	file = fopen("input.txt", "r");
+	fscanf (file, "%s", Name);
+	fclose(file);
+	
     for (p = HEAD; p != NULL; p = p->next){
 	    if (strcmp(p->name,Name)==0){
           lat2=p->latitude;
