@@ -8,6 +8,8 @@ double GET_DISTANCE(double lat1, double lng1, double lat2, double lng2);
 
 void LOCATE(double *lat1, double *lng1);
 
+void CHANGE_LOCATE(double *lat1, double *lng1);
+
 void DISTANCE(Store *HEAD,double lat1,double lng1);
 
 void PRINT_NEAR(Store *HEAD,double lat1,double lng1);
