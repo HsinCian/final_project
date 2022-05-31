@@ -23,7 +23,7 @@ name_entry = tk.Entry(name_frame)
 name_entry.pack(side=tk.LEFT)
 
 
-button = tk.Button(window, text='distance', command=event).pack(padx=5, pady=10)
+button = tk.Button(window, text='calculate', command=event).pack(padx=5, pady=10)
 
 window.mainloop()
 
