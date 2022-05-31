@@ -3,7 +3,7 @@
 #include "insert.h"
 #include "distance.h"
 #include "random.h"
-//RANDOM,RANDOM_NEAR
+//RANDOM,RANDOM_NEAR,RANDOM_TYPE
 
 
 void RANDOM(Store *HEAD){
