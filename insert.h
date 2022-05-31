@@ -11,7 +11,7 @@ void DELETE(Store **HEAD);
 
 void IS_OPEN(Store *HEAD);
 
-void SEARCH(Store *HEAD, char Name[128]);
+void SEARCH(Store *HEAD);
 
 void PRINT_SORT(Store *HEAD,char sort_by[10]);
   
