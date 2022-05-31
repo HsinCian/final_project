@@ -1,7 +1,8 @@
 #include "struct.h"
 #include "myIO.h"
 #include "insert.h"
-//INSERT(), DELETE(),PRINT(),SEARCH(), IS_OPEN()
+//INSERT, DELETE,PRINT,SEARCH, IS_OPEN,PRINT_SORT,PRINT_TYPE
+
 
 void INSERT(Store **HEAD){
   Store *p,*pre=(*HEAD),*new_node;
@@ -55,70 +56,68 @@ void INSERT(Store **HEAD){
 
 
 void PRINT(Store *HEAD){
-    Store *p;
-    printf("NAME\t\t\t\tTYPE\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tPRICE\tOPEN?\n");
-    for(p=HEAD;p!=NULL;p=p->next){
-	char type[13];
-	totype(type, p->type);    	
-        printf("%-30s\t%-12s\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
-	printf("\t%04d\t%04d\t%d\t",p->time[0],p->time[1],p->price);
-	IS_OPEN(p);
-	printf("\n");
-    }
+  Store *p;
+  printf("NAME\t\t\t\tTYPE\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tPRICE\tOPEN?\n");
+  for(p=HEAD;p!=NULL;p=p->next){
+    char type[13];
+    totype(type, p->type);    	
+    printf("%-30s\t%-12s\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
+    printf("\t%04d\t%04d\t%d\t",p->time[0],p->time[1],p->price);
+    IS_OPEN(p);
+    printf("\n");
+  }
 }
+
 
 void PRINT_TYPE(Store *HEAD){
-    Store *p;
-    //printf("What type do you want? (CHICKEN_RICE / JAPANESE / KOREAN / AMERICAN / CHINESE / BREAKFAST / DRINKS / DESSERT)\n");
-    char type[36];
-    //scanf("%s",type);
-	FILE *file;
-	file = fopen("input.txt", "r");
-	fscanf (file, "%s", type);
-	fclose(file);
-    int TYPE=gettype(type);
-    printf("NAME\t\t\t\tTYPE\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tPRICE\tOPEN?\n");
-    for(p=HEAD;p!=NULL;p=p->next){
-    	if(p->type == TYPE){		
-		char type[13];
-		totype(type, p->type);    	
-		printf("%-30s\t%-12s\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
-		printf("\t%04d\t%04d\t%d\t",p->time[0],p->time[1],p->price);
-		IS_OPEN(p);
-		printf("\n");
-	}
+  Store *p;
+  //printf("What type do you want? (CHICKEN_RICE / JAPANESE / KOREAN / AMERICAN / CHINESE / BREAKFAST / DRINKS / DESSERT)\n");
+  char type[36];
+  //scanf("%s",type);
+  FILE *file;
+  file = fopen("input.txt", "r");
+  fscanf (file, "%s", type);
+  fclose(file);
+  int TYPE=gettype(type);
+  printf("NAME\t\t\t\tTYPE\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tPRICE\tOPEN?\n");
+  for(p=HEAD;p!=NULL;p=p->next){
+    if(p->type == TYPE){		
+    char type[13];
+    totype(type, p->type);    	
+    printf("%-30s\t%-12s\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
+    printf("\t%04d\t%04d\t%d\t",p->time[0],p->time[1],p->price);
+    IS_OPEN(p);
+    printf("\n");
     }
+  }
 }
 
-void DELETE(Store **HEAD){
-    Store *p,*pre=NULL;
-    char Name[128];
 
-    
-	//printf("please tell me ,what you want delete store's name\n");
-        //scanf("%s",Name);
-	FILE *file;
-	file = fopen("input.txt", "r");
-	fscanf (file, "%s", Name);
-	fclose(file);
-	
-        for(p=(*HEAD);p!=NULL;p=p->next){
-            if(strcmp(p->name,Name)==0&&p!=(*HEAD)){
-                pre->next=p->next;
-                free(p);
-                break;
-            }
-            if(strcmp(p->name,Name)==0&&p==(*HEAD)){
-                p=(*HEAD)->next;
-                free((*HEAD));
-                (*HEAD)=p;
-                break;
-            }
-            pre=p;
-        }
-        if(p==NULL)
-            printf("INVALID OPERATION\n");
-    
+void DELETE(Store **HEAD){
+  Store *p,*pre=NULL;
+  char Name[128];    
+  //printf("please tell me ,what you want delete store's name\n");
+  //scanf("%s",Name);
+  FILE *file;
+  file = fopen("input.txt", "r");
+  fscanf (file, "%s", Name);
+  fclose(file);
+  for(p=(*HEAD);p!=NULL;p=p->next){
+    if(strcmp(p->name,Name)==0&&p!=(*HEAD)){
+      pre->next=p->next;
+      free(p);
+      break;
+    }
+    if(strcmp(p->name,Name)==0&&p==(*HEAD)){
+      p=(*HEAD)->next;
+      free((*HEAD));
+      (*HEAD)=p;
+      break;
+    }
+    pre=p;
+  }
+  if(p==NULL)
+  printf("INVALID OPERATION\n");    
 }
 
 void IS_OPEN(Store *p){
@@ -138,37 +137,38 @@ void IS_OPEN(Store *p){
 	printf("NO\n");
 }
 
+
 void SEARCH(Store *HEAD,char Name[128]){
-	// If Name doesn’t exit, print “INVALID OPERATION”
-	Store *p;
-	FILE *file;
-	file = fopen("input.txt", "r");
-	fscanf(file, "%s", Name);
-	fclose(file);
-  	for (p = HEAD; p != NULL; p = p->next){
-		if (strcmp(p->name,Name)==0){
-		char type[13];
-		totype(type, p->type);
-		printf("NAME\t\t\t\tTYPE\t\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tPRICE\tOPEN?\n");
-		printf("%-30s\t%-12s\t\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
-		printf("\t%04d\t%04d\t%d\t",p->time[0],p->time[1],p->price);
-		IS_OPEN(p);
-		printf("\n");
-		return;
-		}
-  	}
-  	printf("INVALID OPERATION\n");   
+  // If Name doesn’t exit, print “INVALID OPERATION”
+  Store *p;
+  FILE *file;
+  file = fopen("input.txt", "r");
+  fscanf(file, "%s", Name);
+  fclose(file);
+  for (p = HEAD; p != NULL; p = p->next){
+    if (strcmp(p->name,Name)==0){
+    char type[13];
+    totype(type, p->type);
+    printf("NAME\t\t\t\tTYPE\t\t        PHONENUMBER\tLONGITUDE\tLATITUDE\tRATING\tOPEN\tCLOSE\tPRICE\tOPEN?\n");
+    printf("%-30s\t%-12s\t\t%s\t%f\t%f\t%.1f",p->name,type,p->phonenumber,p->longitude,p->latitude,p->rating);
+    printf("\t%04d\t%04d\t%d\t",p->time[0],p->time[1],p->price);
+    IS_OPEN(p);
+    printf("\n");
+    return;
+    }
+  }
+  printf("INVALID OPERATION\n");   
 }
 
 
 void PRINT_SORT(Store *HEAD,char sort_by[10]){
-    Store *p;
-    printf("%*s | %*s | %*s | %*s | %*s\n",-30,"NAME",-12,"PHONENUMBER",-10,sort_by,-4,"OPEN",-4,"CLOSE");
-    for(p=HEAD;p!=NULL;p=p->next){ 	
-        printf("%-30s | %-12s | ",p->name,p->phonenumber);
-        if(strcmp(sort_by,"rating") == 0) printf("%-10.1f | ",p->rating);
-        else if(strcmp(sort_by, "longitude") == 0) printf("%-10f | ",p->longitude);
-        else if(strcmp(sort_by, "latitude") == 0) printf("%-10f | ",p->latitude); 
-	printf("%04d | %04d\n",p->time[0],p->time[1]);
-    }
+  Store *p;
+  printf("%*s | %*s | %*s | %*s | %*s\n",-30,"NAME",-12,"PHONENUMBER",-10,sort_by,-4,"OPEN",-4,"CLOSE");
+  for(p=HEAD;p!=NULL;p=p->next){ 	
+    printf("%-30s | %-12s | ",p->name,p->phonenumber);
+    if(strcmp(sort_by,"rating") == 0) printf("%-10.1f | ",p->rating);
+    else if(strcmp(sort_by, "longitude") == 0) printf("%-10f | ",p->longitude);
+    else if(strcmp(sort_by, "latitude") == 0) printf("%-10f | ",p->latitude); 
+    printf("%04d | %04d\n",p->time[0],p->time[1]);
+  }
 }
