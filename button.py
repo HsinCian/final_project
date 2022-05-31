@@ -68,6 +68,7 @@ def MAP():
     sys.exit(0)
     
 def LOCATE():
+    fo.write("LOCATE\n")
     fo.close()
     os.system("python3 locate.py")
     sys.exit(0)
