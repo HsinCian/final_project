@@ -57,7 +57,7 @@ def STOP():
     sys.exit(0)
 
 def RANDOM():
-    os.system("python3 random.py")
+    os.system("python3 ran.py")
     #fo.write("RANDOM\n")
     #fo.close()
     sys.exit(0)
