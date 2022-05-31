@@ -140,8 +140,6 @@ void IS_OPEN(Store *p){
 
 void SEARCH(Store *HEAD,char Name[128]){
 	// If Name doesn’t exit, print “INVALID OPERATION”
-	char Name[128];
-        //scanf("%s",Name);
 	Store *p;
 	file = fopen("input.txt", "r");
 	fscanf(file, "%s", Name);
