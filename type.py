@@ -4,7 +4,7 @@ import os, sys
 
 window = tk.Tk()
 window.title('type')
-window.geometry('800x550')
+window.geometry('300x500')
 window.configure(background='white')
 
 header_label = tk.Label(window, text='Choose your type')
