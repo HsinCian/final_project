@@ -32,6 +32,7 @@ def SEARCH():
 def SORT():
     fo.write("SORT\n")
     fo.close()
+    os.system("python3 sort.py")
     sys.exit(0)
     
 def PRINT():
