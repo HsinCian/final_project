@@ -15,16 +15,19 @@ fo = open("input.txt", "w")
 def alll():
     fo.write('longitude ')
     fo.close()
+    os.system("python3 choose_excel.py")
     sys.exit(0)
     
 def typee():
     fo.write('latitude ')
     fo.close()
+    os.system("python3 choose_excel.py")
     sys.exit(0)
     
 def near():
     fo.write('rating ')
     fo.close()
+    os.system("python3 choose_excel.py")
     sys.exit(0)
 
 button1 = tk.Button(window, text='longitude', command=alll).pack(padx=5, pady=10)
