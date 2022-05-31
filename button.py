@@ -4,7 +4,7 @@ import os, sys
 
 window = tk.Tk()
 window.title('')
-window.geometry('300x550')
+window.geometry('300x600')
 window.configure(background='white')
 
 header_label = tk.Label(window, text='What do you want to do?')
