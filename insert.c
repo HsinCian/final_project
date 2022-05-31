@@ -122,7 +122,7 @@ void DELETE(Store **HEAD){
 }
 
 void IS_OPEN(Store *p){
-	const char * const delim = ":";
+  const char * const delim = ":";
 	char buf[30] = {0};
 	char *substr = NULL;
 	strcpy(buf, __TIME__);
@@ -142,6 +142,7 @@ void IS_OPEN(Store *p){
 void SEARCH(Store *HEAD,int *rec){
   // If Name doesn’t exit, print “INVALID OPERATION”
   Store *p;
+  char Name[128];    
   FILE *file;
   file = fopen("input.txt", "r");
   fscanf(file, "%s", Name);
