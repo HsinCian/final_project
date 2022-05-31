@@ -63,6 +63,7 @@ def RANDOM():
     sys.exit(0)
 
 def MAP():
+    os.system("python3 map_button.py")
     sys.exit(0)
 
 fo = open("cmd.txt", "w")
