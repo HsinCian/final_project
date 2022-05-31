@@ -56,7 +56,7 @@ button1 = tk.Button(window, text='Chicken rice', bg='olive', command=chken).pack
 button2 = tk.Button(window, text='Japanese', bg='lightskyblue', command=jap).pack(padx=5, pady=10)
 button3 = tk.Button(window, text='Korean',bg='slateblue', command=kor).pack(padx=5, pady=10)
 button4 = tk.Button(window, text='American',bg='seagreen', command=amr).pack(padx=5, pady=10)
-button5 = tk.Button(window, text='Chinese',bg='m', command=chi).pack(padx=5, pady=10)
+button5 = tk.Button(window, text='Chinese',bg='plum', command=chi).pack(padx=5, pady=10)
 button6 = tk.Button(window, text='Breakfast',bg='pink', command=brk).pack(padx=5, pady=10)
 button7 = tk.Button(window, text='Drinks',bg='slategrey', command=drk).pack(padx=5, pady=10)
 button8 = tk.Button(window, text='Dessert',bg='lightsalmon', command=des).pack(padx=5, pady=10)
