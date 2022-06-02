@@ -28,7 +28,7 @@ void INSERT(Store **HEAD){
         count++;
     fscanf(file, "%lf", &(new_node->longitude));
     for (p = HEAD; p != NULL; p = p->next){
-      if (p->longitud e== new_node->longitude)
+      if (p->longitude== new_node->longitude)
         count++;
     fscanf(file, "%lf", &(new_node->latitude));
     for (p = HEAD; p != NULL; p = p->next){
