@@ -41,9 +41,12 @@ void INSERT(Store **HEAD){
     //scanf("%s %s %s",(new_node->name),type,(new_node->phonenumber));
     new_node->type = gettype(type);
     //scanf("%lf %lf",&(new_node->longitude),&(new_node->latitude));
-    //scanf("%f %d %d %d",&(new_node->rating),&(new_node->time[0]),&(new_node->time[1]),&(new_node->price))  
-    if(count==4)
+    //scanf("%f %d %d %d",&(new_node->rating),&(new_node->time[0]),&(new_node->time[1]),&(new_node->price));
+    if(count==4){
       free(new_node);
+      printf("you inserted this store !!\n");
+    }
+      
     else{
       new_node->next=p->next;
       p->next=new_node;
