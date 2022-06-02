@@ -44,7 +44,7 @@ void INSERT(Store **HEAD){
     //scanf("%f %d %d %d",&(new_node->rating),&(new_node->time[0]),&(new_node->time[1]),&(new_node->price));
     if(count==4){
       free(new_node);
-      printf("You inserted this store !!\n");
+      printf("You have already inserted this store !!\n");
     }
       
     else{
