@@ -72,7 +72,7 @@ void INSERT(Store **HEAD){
     //scanf("%f %d %d %d",&((*HEAD)->rating),&((*HEAD)->time[0]),&((*HEAD)->time[1]),&((*HEAD)->price));
     (*HEAD)->next=NULL;
     p=(*HEAD);
-}
+  }
 }
 
 
@@ -138,7 +138,7 @@ void DELETE(Store **HEAD){
     pre=p;
   }
   if(p==NULL)
-  printf("INVALID OPERATION\n");    
+    printf("INVALID OPERATION\n");    
 }
 
 void IS_OPEN(Store *p){
