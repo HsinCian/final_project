@@ -1,10 +1,10 @@
-# Project Title 项目名称
+# Final Project
 
 > Eat to live but do not know what to eat?
 
 Use our program to help you decide today's meal
 
-![](https://github.com/dbader/readme-template/raw/master/header.png)
+![橫](https://user-images.githubusercontent.com/75783579/171784417-718c87f3-b054-49e2-bd25-1c9dd3f3c612.jpg)
 
 ## Getting Started 
 
@@ -19,7 +19,7 @@ $sudo apt install python3-matplotlib
 
 ### Usage example
 
-
+https://user-images.githubusercontent.com/75783579/171784159-7d46dd4e-d416-43bc-a67e-598c57cb3ff2.mp4
 
 ## Authors 关于作者
 
