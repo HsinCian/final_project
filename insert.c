@@ -19,24 +19,32 @@ void INSERT(Store **HEAD){
     file = fopen("input.txt", "r");
     fscanf(file, "%s", (new_node->name));
     for (p = (*HEAD); p != NULL; p = p->next){
-      if (strcmp(p->name,new_node->name)==0)
-        count++;
+      if (strcmp(p->name,new_node->name)==0){
+	count++;
+        break;
+      }
     }
     fscanf(file, "%s", type);
     fscanf(file, "%s", (new_node->phonenumber));
     for (p = (*HEAD); p != NULL; p = p->next){
-      if (strcmp(p->phonenumber,new_node->phonenumber)==0)
-        count++;
+      if (strcmp(p->phonenumber,new_node->phonenumber)==0){
+	count++;
+        break;
+      }
     }
     fscanf(file, "%lf", &(new_node->longitude));
     for (p = (*HEAD); p != NULL; p = p->next){
-      if (p->longitude== new_node->longitude)
-        count++;
+      if (p->longitude== new_node->longitude){
+	count++;
+        break;
+      }        
     }
     fscanf(file, "%lf", &(new_node->latitude));
     for (p = (*HEAD); p != NULL; p = p->next){
-      if (p->latitude==new_node->latitude)
-        count++;
+      if (p->latitude==new_node->latitude){
+	count++;
+        break;
+      }
     }
     fscanf(file, "%f", &(new_node->rating));
     fscanf(file, "%d", &(new_node->time[0]));
