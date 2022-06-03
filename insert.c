@@ -21,19 +21,23 @@ void INSERT(Store **HEAD){
     for (p = HEAD; p != NULL; p = p->next){
       if (strcmp(p->name,new_node->name)==0)
         count++;
+    }
     fscanf(file, "%s", type);
     fscanf(file, "%s", (new_node->phonenumber));
     for (p = HEAD; p != NULL; p = p->next){
       if (strcmp(p->phonenumber,new_node->phonenumber)==0)
         count++;
+    }
     fscanf(file, "%lf", &(new_node->longitude));
     for (p = HEAD; p != NULL; p = p->next){
       if (p->longitude== new_node->longitude)
         count++;
+    }
     fscanf(file, "%lf", &(new_node->latitude));
     for (p = HEAD; p != NULL; p = p->next){
       if (p->latitude==new_node->latitude)
         count++;
+    }
     fscanf(file, "%f", &(new_node->rating));
     fscanf(file, "%d", &(new_node->time[0]));
     fscanf(file, "%d", &(new_node->time[1]));
