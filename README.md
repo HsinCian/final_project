@@ -11,7 +11,7 @@ Use our program to help you decide today's meal
 
 ### Prerequisites & Installation
 
-Our UI need to install python3 in Linux:
+Our UI need to install matplotlib of python3 in Linux:
 
 ```
 $sudo apt install python3-matplotlib
